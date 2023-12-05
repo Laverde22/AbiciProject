@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 use App\Models\pedidos; 
 use App\Models\User; 
 use Illuminate\Support\Facades\Auth;
-use App\Models\facturas; 
+use App\Models\factura; 
 use App\Models\detallefactura; 
 use DB;
 

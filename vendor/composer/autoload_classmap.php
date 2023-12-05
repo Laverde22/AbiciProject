@@ -33,7 +33,7 @@ return array(
     'App\\Models\\Bicicletas' => $baseDir . '/app/Models/Bicicletas.php',
     'App\\Models\\User' => $baseDir . '/app/Models/User.php',
     'App\\Models\\detallefactura' => $baseDir . '/app/Models/detallefactura.php',
-    'App\\Models\\facturas' => $baseDir . '/app/Models/facturas.php',
+    'App\\Models\\factura' => $baseDir . '/app/Models/factura.php',
     'App\\Models\\pedidos' => $baseDir . '/app/Models/pedidos.php',
     'App\\Providers\\AppServiceProvider' => $baseDir . '/app/Providers/AppServiceProvider.php',
     'App\\Providers\\AuthServiceProvider' => $baseDir . '/app/Providers/AuthServiceProvider.php',

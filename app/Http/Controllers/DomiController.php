@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\pedidos; 
 use App\Models\User; 
 use Illuminate\Support\Facades\Auth;
-use App\Models\facturas; 
+use App\Models\factura; 
 use App\Models\detallefactura;
 use App\Models\Bicicletas;
+use App\Models\provedores;
 use DB;
 
 class DomiController extends Controller
@@ -25,8 +26,9 @@ class DomiController extends Controller
         // Obtener los pedidos del domiciliario autenticado
         $pedidos = Pedidos::where('idDomiciliario', '=' ,$idDomiciliario)->get();
 
+        $proveedores = provedores::orderBy('nombre', 'asc')->get();
         
-        return view('domiciliario/pedidos', compact('pedidos'));
+        return view('domiciliario/pedidos', compact('pedidos','proveedores'));
     }
 
 

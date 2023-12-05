@@ -28,6 +28,7 @@
                                 <p><strong>Valor Productos:</strong> {{ $factura->ValorProductos }}</p>
                                 <p><strong>Valor Servicios:</strong> {{ $factura->ValorServicio }}</p>
                                 <p><strong>Valor Total:</strong> {{ $factura->ValorProductos + $factura->ValorServicio }}</p>
+                                <p><strong>Domiciliario:</strong> {{ $factura->name }}</p>
                             </div>
                             <div class="card-footer">
                                 <!-- Aquí puedes colocar botones o enlaces adicionales si es necesario -->
