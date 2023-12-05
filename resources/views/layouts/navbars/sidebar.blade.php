@@ -19,6 +19,12 @@
       </li>
 
   @if(auth()->user()->hasRole('admin'))
+  <li class="nav-item{{ $activePage == 'personal' ? ' active' : '' }}">
+    <a class="nav-link" href="">
+      <i class="material-icons">add</i>
+        <p>{{ __('Crear Personal') }} </p>
+    </a>
+  </li>
 
   <li class="nav-item dropdown{{ $activePage == 'pedidos' ? ' show active' : '' }}">
     <a class="nav-link dropdown-toggle" href="#" id="dropdownPedidos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="{{ $activePage == 'pedidos' ? 'true' : 'false' }}">
@@ -32,6 +38,7 @@
       <a class="dropdown-item" href="{{ route('pedidos.finalizados', ['estado' => 'finalizados']) }}">Finalizados</a>
       <a class="dropdown-item" href="{{ route('pedidos.denegados', ['estado' => 'denegados']) }}">Denegados</a>
     </div>
+  </li>
   </li>
     <li class="nav-item{{ $activePage == 'clientes' ? ' active' : '' }}">
       <a class="nav-link" href="{{route('admin.listclientes')}}">
