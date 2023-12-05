@@ -85,6 +85,13 @@ Route::resource('facturas', App\Http\Controllers\FacturasController::class);
 
 Route::resource('domiciliario', App\Http\Controllers\DomiController::class);
 
+<<<<<<< HEAD
+/* Regitrar domiciliario  */
+Route::get('administrador/listpersonal',[App\Http\Controllers\RegisterController::class,'indexpersonal'])->name('admin.listpersonal');
+
+
+=======
+>>>>>>> f8bb313e88bb214f9768cae625425b51b8dff16d
 
 
 });

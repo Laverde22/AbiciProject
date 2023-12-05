@@ -1,17 +1,13 @@
-@extends('layouts.main', ['activePage' => 'domiciliarios', 'titlePage' => __('Clientes')])
+@extends('layouts.main', ['activePage' => 'personal', 'titlePage' => __('Personal')])
 <link rel="stylesheet" href="{{asset('css/dashboardadmin.css')}}">
 @section('content')
-<<<<<<< HEAD
-    <div class="content"> 
-=======
     <div class="content">
->>>>>>> f8bb313e88bb214f9768cae625425b51b8dff16d
         <div class="container-fluid">
-            <h2>Listado de Domiciliarios</h2>
+            <h2>Listado de Personal</h2>
             @if($usuarios->isEmpty())
-                <p>No hay Domiciliarios que cumplan estas caracteristicas</p>
+                <p>No hay clientes que cumplan estas caracteristicas</p>
             @else
-            {{-- <form action="{{ route('admin.searchcli') }}" method="GET" class="mb-4">
+            <form action="{{ route('admin.searchcli') }}" method="GET" class="mb-4">
                 <div class="form-group">
                     <label for="selectCriterio">Seleccionar método de búsqueda:</label>
                     <select name="criterio" id="selectCriterio" class="form-control" autofocus>
@@ -27,7 +23,7 @@
                     <input type="text" name="valor" id="valor" class="form-control" placeholder="Ingrese el valor de búsqueda ">
                 </div>
                 <button type="submit" class="btn btn-primary">Buscar</button>
-            </form> --}}
+            </form>
             
             
                 <div class="row">
@@ -35,7 +31,7 @@
                         <div class="col-md-4 mb-4">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">{{ $cliente->fullname }}</h4>
+                                    <h4 class="card-title">{{ $cliente->name . ' ' . $cliente->apellidos }}</h4>
                                     <p class="card-text">Teléfono: {{ $cliente->telefono }}</p>
                                     <p class="card-text">Dirección: {{ $cliente->direccion }}</p>
                                     <p class="card-text">Correo: {{ $cliente->email }}</p>
@@ -49,21 +45,20 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="modalCliente{{ $cliente->id }}Label">Detalles de  {{ $cliente->fullname }}</h5>
+                                        <h5 class="modal-title" id="modalCliente{{ $cliente->id }}Label">Detalles de  {{ $cliente->name }}</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
                                         <!-- Mostrar aquí los detalles del cliente -->
-                                        <p><strong>Nombre:</strong>{{ $cliente->fullname }}</p>
+                                        <p><strong>Nombre:</strong>{{ $cliente->name . ' ' . $cliente->apellidos }}</p>
                                         <p><strong>Teléfono:</strong> {{ $cliente->telefono }}</p>
                                         <p><strong>Dirección:</strong> {{ $cliente->direccion }}</p>
                                         <p><strong>Correo:</strong> {{ $cliente->email }}</p>
                                         <p ><strong>Fecha De Nacimineto:</strong> {{ $cliente->fechaNacimiento }}</p>
                                         <p><strong>{{ $cliente->tipoDocumento }}:</strong> {{ $cliente->numDocumento }}</p>
-                                        <p><strong> Fecha de Registro:{{ $cliente->created_at}}</strong></p>
-                                        <p><strong> Fecha de Actualización:{{ $cliente->updated_at}}</strong></p>
+                                        <p><strong> Rol:{{ $cliente->rol}}</strong></p>
                                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarRolModal{{ $cliente->id }}">Editar Rol</button>
                                         <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                                     </div>
@@ -73,7 +68,7 @@
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="editarRolModal{{ $cliente->id }}Label">Editar Rol de {{ $cliente->fullname }}</h5>
+                                                    <h5 class="modal-title" id="editarRolModal{{ $cliente->id }}Label">Editar Rol de {{ $cliente->name }}</h5>
                                                 </div>
                                                 <form action="{{ route('cliente.actualizar-rol', ['id' => $cliente->id]) }}" method="POST">
                                                     @csrf
@@ -89,8 +84,7 @@
                                                     <div class="modal-footer">
                                                         <!-- Agrega aquí el botón para guardar el nuevo rol -->
                                                         <button type="submit" class="btn btn-primary">Actualizar Rol</button>
-                                                        <button type="button" class="btn btn-primary" onclick="location.reload();">Cerrar</button>  
-                                                    </div>
+                                                        <button type="button" class="btn btn-primary" onclick="location.reload();">Cerrar</button>                                                    </div>
                                                 </form>
                                             </div>
                                         </div>
@@ -104,5 +98,5 @@
             @endif
         </div>
     </div>
-@endsection
 
+@endsection
