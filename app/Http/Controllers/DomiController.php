@@ -6,9 +6,10 @@ use Illuminate\Http\Request;
 use App\Models\pedidos; 
 use App\Models\User; 
 use Illuminate\Support\Facades\Auth;
-use App\Models\facturas; 
+use App\Models\factura; 
 use App\Models\detallefactura;
 use App\Models\Bicicletas;
+use App\Models\provedores;
 use DB;
 
 class DomiController extends Controller
@@ -19,14 +20,16 @@ class DomiController extends Controller
     public function index()
     {
         $idDomiciliario = Auth::user()->id; // Suponiendo que el campo de ID sea 'id'
-
-        $idDomiciliario = Auth::id(); // Obtener el ID del usuario autenticado
-
-        // Obtener los pedidos del domiciliario autenticado
-        $pedidos = Pedidos::where('idDomiciliario', '=' ,$idDomiciliario)->get();
-
+    
+        $pedidos = DB::table('pedidos')
+        ->join('users', 'pedidos.idCliente', '=', 'users.id')
+        ->select('pedidos.*', 'users.name as nombre') // Seleccionar los campos deseados
+        ->where('pedidos.idDomiciliario', '=', $idDomiciliario)
+        ->get();
+    
+        $proveedores = Provedores::orderBy('nombre', 'asc')->get();
         
-        return view('domiciliario/pedidos', compact('pedidos'));
+        return view('domiciliario.pedidos', compact('pedidos', 'proveedores'));
     }
 
 

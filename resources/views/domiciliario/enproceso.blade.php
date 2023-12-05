@@ -10,12 +10,11 @@
                     <p>No hay pedidos disponibles para ti.</p>
                 @else
                     @foreach($pedidos as $pedido)
-                        @if($pedido->estado === 'Pendiente')
+                        @if($pedido->estado === 'En Proceso')
                             <div class="col-md-4 mb-4">
                                 <div class="card">
                                     <div class="card-body">
-                                        
-                                        <p class="card-text">Cliente: {{ $pedido->nombre }}</p>
+                                        <p class="card-text">Cliente: {{ $pedido->idCliente }}</p>
                                         <p class="card-text">Productos: {{ $pedido->Productos }}</p>
                                         <p class="card-text">Dirección: {{ $pedido->Direccion }}</p>
                                         <p class="card-text">Estado: {{ $pedido->estado }}</p>
@@ -66,6 +65,7 @@
                                                 <label for="valorservicio">Valor de Servicio:</label>
                                                 <input type="number" class="form-control" id="valorservicio" name="valorservicio" required>
                                             </div>
+
                                             <!-- Otros campos si los hay -->
                                             <button type="submit" class="btn btn-success">Guardar Factura</button>
                                         </form>

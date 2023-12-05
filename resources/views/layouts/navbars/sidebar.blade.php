@@ -39,7 +39,6 @@
       <a class="dropdown-item" href="{{ route('pedidos.denegados', ['estado' => 'denegados']) }}">Denegados</a>
     </div>
   </li>
-  </li>
     <li class="nav-item{{ $activePage == 'clientes' ? ' active' : '' }}">
       <a class="nav-link" href="{{route('admin.listclientes')}}">
         <i class="material-icons">person</i>
@@ -71,12 +70,21 @@
     </li>
   </ul>
 @elseif(auth()->user()->hasRole('user'))
-<li class="nav-item{{ $activePage == 'mispedidos' ? ' active' : '' }}">
-  <a class="nav-link" href="{{route('user.index')}}">
-    <i class="material-icons">content_paste</i>
-      <p>{{ __('Mis Pedidos') }}</p>
+
+<li >
+  <a class="nav-link dropdown-toggle" href="#" id="dropdownPedidos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="{{ $activePage == 'pedidos' ? 'true' : 'false' }}">
+    <i class="material-icons">shopping_cart</i>
+    <p>{{ __('Mis Pedidos') }}</p>
   </a>
+  <div class="dropdown-menu{{ $activePage == 'pedi' ? ' show' : '' }}" aria-labelledby="dropdownPedidos">
+    <a class="dropdown-item" href="{{ route('users.index', ['estado' => 'todos']) }}">Todos</a>
+    <a class="dropdown-item" href="{{ route('user.index', ['estado' => 'pendientes']) }}">Pendientes</a>
+    <a class="dropdown-item" href="{{ route('user.index', ['estado' => 'enproceso']) }}">En Proceso</a>
+    <a class="dropdown-item" href="{{ route('user.index', ['estado' => 'finalizados']) }}">Finalizados</a>
+    <a class="dropdown-item" href="{{ route('user.index', ['estado' => 'denegados']) }}">Denegados</a>
+  </div>
 </li>
+
 <li class="nav-item{{ $activePage == 'notificaciones' ? ' active' : '' }}">
   <a class="nav-link" href="#">
      <i class="material-icons">notifications</i>
@@ -87,11 +95,18 @@
 </ul>
 @endif
 @if(auth()->user()->hasRole('domi'))
-<li class="nav-item{{ $activePage == 'mispedidos' ? ' active' : '' }}">
-  <a class="nav-link" href="{{route('domiciliario.index')}}">
-    <i class="material-icons">content_paste</i>
-      <p>{{ __('Pedidos') }}</p>
+<li >
+  <a class="nav-link dropdown-toggle" href="#" id="dropdownPedidos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="{{ $activePage == 'pedidos' ? 'true' : 'false' }}">
+    <i class="material-icons">shopping_cart</i>
+    <p>{{ __('Mis Pedidos') }}</p>
   </a>
+  <div class="dropdown-menu{{ $activePage == 'pedi' ? ' show' : '' }}" aria-labelledby="dropdownPedidos">
+    <a class="dropdown-item" href="{{ route('domiciliario.index', ['estado' => 'todos']) }}">Todos</a>
+    <a class="dropdown-item" href="{{ route('domiciliario.index', ['estado' => 'pendientes']) }}">Pendientes</a>
+    <a class="dropdown-item" href="{{ route('domiciliario.index', ['estado' => 'enproceso']) }}">En Proceso</a>
+    <a class="dropdown-item" href="{{ route('domiciliario.index', ['estado' => 'finalizados']) }}">Finalizados</a>
+    <a class="dropdown-item" href="{{ route('domiciliario.index', ['estado' => 'denegados']) }}">Denegados</a>
+  </div>
 </li>
   <li class="nav-item{{ $activePage == 'factura' ? ' active' : '' }}">
   <a class="nav-link" href="{{route('facturas.index')}}">

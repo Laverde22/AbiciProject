@@ -2,7 +2,7 @@
 <nav class="navbar navbar-expand-lg navbar-transparent navbar-absolute fixed-top ">
   <div class="container-fluid">
     <div class="navbar-wrapper">
-      <h1 class="navbar-brand" href="#" style="font-size: 30px">{{ $titlePage }}</h1>
+      <h1 class="navbar-brand" href="#" style="font-size: 30px"></h1>
        
     </div>
     <button class="navbar-toggler" type="button" data-toggle="collapse" aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">

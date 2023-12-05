@@ -640,7 +640,7 @@ class ComposerStaticInit7cdec6ca3496ad337dc46d6a848de4b9
         'App\\Models\\Bicicletas' => __DIR__ . '/../..' . '/app/Models/Bicicletas.php',
         'App\\Models\\User' => __DIR__ . '/../..' . '/app/Models/User.php',
         'App\\Models\\detallefactura' => __DIR__ . '/../..' . '/app/Models/detallefactura.php',
-        'App\\Models\\facturas' => __DIR__ . '/../..' . '/app/Models/facturas.php',
+        'App\\Models\\factura' => __DIR__ . '/../..' . '/app/Models/factura.php',
         'App\\Models\\pedidos' => __DIR__ . '/../..' . '/app/Models/pedidos.php',
         'App\\Providers\\AppServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AppServiceProvider.php',
         'App\\Providers\\AuthServiceProvider' => __DIR__ . '/../..' . '/app/Providers/AuthServiceProvider.php',
