@@ -1,0 +1,71 @@
+:root {
+    --colorprimario:#239B56 ;
+    --colorsecundario: #0099CC;
+    --colorterciario: #66FF99;
+    --colortraslucido: rgba(255, 255, 255, 0.434);
+
+}
+
+
+/* Estilos para el contenedor de navegación */
+.contenedor-nav {
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color:var(--colortraslucido);/* Fondo semi-transparente para que el texto sea legible */
+    box-shadow: 0px 4px 6px rgba(0, 255, 55, 0.359); 
+}
+
+/* Estilos para la barra de navegación */
+.nav-bar.sticky {
+    position: fixed;
+    width: 100%;
+    background-color: var(--colortraslucido); /* Fondo semi-transparente para legibilidad */
+    box-shadow:0px 4px 6px rgba(0, 255, 55, 0.359);
+    z-index: 1000;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    transition: top 0.3s;
+}
+
+/* Estilos para la parte izquierda de la barra de navegación */
+.nav-left {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para el logotipo y el icono */
+.nav-left p {
+    font-size: 20px;
+    font-weight: bold;
+    color: var(--colorprimario);
+    margin-left: 20px;
+}
+
+/* Estilos para la parte derecha de la barra de navegación */
+.nav-right {
+    display: flex;
+    align-items: center;
+}
+
+/* Estilos para los enlaces de autenticación */
+.login a {
+    margin-right: 10px;
+    padding: 8px 16px;
+    background-color: var(--colorprimario);
+    color: #fff;
+    border-radius: 4px;
+    text-decoration: none;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.login a:hover {
+    background-color: var(--colorprimario);
+}

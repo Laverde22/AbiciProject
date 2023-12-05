@@ -1,0 +1,112 @@
+:root {
+    --colorprimario: #239B56    ;
+    --colorsecundario: #0099CC;
+    --colorterciario: #10963c;
+    --colortraslucido: rgba(255, 255, 255, 0.434);
+    --colornegro: 00000;
+
+  }
+
+/* Estilos generales para la sección */
+.custom-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin-bottom: 20px;
+    margin: 0 auto;
+    color: #333;
+}
+
+section{
+    margin-right: 100px;
+    margin-left: 100px;
+}
+
+/* Estilos para el fieldset */
+.custom-fieldset {
+    font-size: 18px;
+    font-weight: bold;
+    color: var(--colornegro);
+    border: 2px solid var(--colorterciario);
+    border-radius: 10px;
+    padding: 10px;
+    justify-content: center;
+}
+
+/* Estilos para el contenedor de campos de entrada */
+.custom-input-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilos para las etiquetas */
+.custom-label {
+    font-size: 14px;
+    font-weight: bold;
+    color: #666;
+}
+
+/* Estilos para los campos de entrada */
+.custom-input {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+/* Estilos para el contenedor de campos de texto */
+.custom-textarea-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+/* Estilos para los campos de texto */
+.custom-textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    resize: none;
+}
+
+.btn-tomarpedido {
+    background-color:var(--colorprimario);
+    border: none;
+    color: #ddd;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    margin-left: 88%;
+    margin-top: 5PX;
+   
+}
+
+
+.btn-tomarpedido:hover {
+    background-color:var(--colorprimario);
+    color: #ffff;
+}
+
+.custom-select {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+   
+}
+
+
+.custom-select .arrow {
+    position: absolute;
+    top: 50%;
+    right: 1rem;
+    transform: translateY(-50%);
+    width: 0.5rem;
+    height: 0.5rem;
+    border-left: 2px solid;
+    border-bottom: 2px solid;
+    content: '';
+    pointer-events: none;
+}
+
