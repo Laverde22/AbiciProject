@@ -24,9 +24,7 @@
                                     Estado: {{ $pedido->estado }}
                                     </p>
                                     @if($pedido->estado === 'Pendiente')
-                                    <a href="#" class="btn btn-primary btn-aceptar" data-toggle="modal" data-target="#modalEditarPedido"><i class="material-icons">check</i>
-                                        ACEPTAR
-                                    </a>                          
+                                    <a href="#" class="btn btn-primary btn-aceptar" data-toggle="modal" data-target="#modalEditarPedido"><i class="material-icons">check</i> ACEPTAR</a>                          
                                     @endif
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#modalPedido{{ $pedido->IdPedido }}">
                                             <i class="material-icons">add</i> Más Info...
@@ -63,22 +61,19 @@
                                             @method('PUT')
                                         </form>
                                     @elseif($pedido->estado === 'Pendiente')
-                                        <!-- Botones para estado Pendiente -->
-                                        <button class="btn btn-primary">Aceptar</button>
+                                        <a href="#" class="btn btn-primary btn-aceptar" data-toggle="modal" data-target="#modalEditarPedido"><i class="material-icons">check</i>
+                                            ACEPTAR
+                                        </a>
                                         <a href="{{ route('pedidos.cancelar', $pedido->IdPedido) }}" class="btn btn-danger" onclick="event.preventDefault();
                                             document.getElementById('cancelar-pedido-{{ $pedido->IdPedido }}').submit();">Rechazar Pedido
                                         </a>
-                                        
                                         <form id="cancelar-pedido-{{ $pedido->IdPedido }}" action="{{ route('pedidos.cancelar', $pedido->IdPedido) }}" method="POST" style="display: none;">
                                             @csrf
                                             @method('PUT')
-                                        </form
+                                        </form>
                                     @elseif($pedido->estado === 'Finalizado' || $pedido->estado === 'Denegado')
                                         <!-- Botones para estados Finalizado o Denegado -->
                                         <button class="btn btn-success">Generar Reporte</button>
-                                    @else
-                                        <!-- Otros casos o condiciones adicionales -->
-                                        <button class="btn btn-info">Otro Botón</button>
                                     @endif
                                     <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                                     </div>

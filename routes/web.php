@@ -7,6 +7,8 @@ use App\Http\Controllers\BusquedasController;
 use App\Http\Controllers\BicicletasController;
 use App\Http\Controllers\DomiciliariosController;
 use App\Http\Controllers\UserController;
+use App\Http\Controllers\FacturasController;
+use App\Http\Controllers\DomiController;
 
 
 /*
@@ -74,6 +76,15 @@ Route::get('administrador/buscarCli', [App\Http\Controllers\BusquedasController:
 
 /*   rutas rol user   */
 Route::resource('user', App\Http\Controllers\UserController::class);
+
+
+/*   RUTAS FACTURA  */ 
+Route::resource('facturas', App\Http\Controllers\FacturasController::class);
+
+/*   Rutas Domciiario   */
+
+Route::resource('domiciliario', App\Http\Controllers\DomiController::class);
+
 
 
 });

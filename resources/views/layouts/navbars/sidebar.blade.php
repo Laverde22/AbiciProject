@@ -80,8 +80,14 @@
 </ul>
 @endif
 @if(auth()->user()->hasRole('domi'))
+<li class="nav-item{{ $activePage == 'mispedidos' ? ' active' : '' }}">
+  <a class="nav-link" href="{{route('domiciliario.index')}}">
+    <i class="material-icons">content_paste</i>
+      <p>{{ __('Pedidos') }}</p>
+  </a>
+</li>
   <li class="nav-item{{ $activePage == 'factura' ? ' active' : '' }}">
-  <a class="nav-link" href="">
+  <a class="nav-link" href="{{route('facturas.index')}}">
     <i class="material-icons">library_books</i>
       <p>{{ __('Facturas') }}</p>
     </a>
