@@ -17,12 +17,21 @@
             <p>{{ __('INICIO') }}</p>
         </a>
       </li>
+<<<<<<< HEAD
  
   @if(auth()->user()->hasRole('admin'))
   <li class="nav-item{{ $activePage == 'personal' ? ' active' : '' }}">
     <a class="nav-link" href="{{ route('admin.listpersonal') }}">
       <i class="material-icons">add</i>
         <p>{{ __('Personal') }} </p>
+=======
+
+  @if(auth()->user()->hasRole('admin'))
+  <li class="nav-item{{ $activePage == 'personal' ? ' active' : '' }}">
+    <a class="nav-link" href="">
+      <i class="material-icons">add</i>
+        <p>{{ __('Crear Personal') }} </p>
+>>>>>>> f8bb313e88bb214f9768cae625425b51b8dff16d
     </a>
   </li>
 

@@ -162,7 +162,10 @@ class AdminController extends Controller
     }
 
 
+<<<<<<< HEAD
 
+=======
+>>>>>>> f8bb313e88bb214f9768cae625425b51b8dff16d
     public function edit( $id)
     {
         //
