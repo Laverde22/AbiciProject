@@ -17,21 +17,12 @@
             <p>{{ __('INICIO') }}</p>
         </a>
       </li>
-<<<<<<< HEAD
  
   @if(auth()->user()->hasRole('admin'))
   <li class="nav-item{{ $activePage == 'personal' ? ' active' : '' }}">
     <a class="nav-link" href="{{ route('admin.listpersonal') }}">
-      <i class="material-icons">add</i>
-        <p>{{ __('Personal') }} </p>
-=======
-
-  @if(auth()->user()->hasRole('admin'))
-  <li class="nav-item{{ $activePage == 'personal' ? ' active' : '' }}">
-    <a class="nav-link" href="">
-      <i class="material-icons">add</i>
-        <p>{{ __('Crear Personal') }} </p>
->>>>>>> f8bb313e88bb214f9768cae625425b51b8dff16d
+      <i class="material-icons">store</i>
+        <p>{{ __('Domiciliarios') }} </p>
     </a>
   </li>
 
@@ -66,12 +57,12 @@
       </div>
   </li>
   
-    <li class="nav-item{{ $activePage == 'domiciliarios' ? ' active' : '' }}">
+ {{--    <li class="nav-item{{ $activePage == 'domiciliarios' ? ' active' : '' }}">
       <a class="nav-link" href="{{route('domiciliarios.index')}}">
         <i class="material-icons">store</i>
         <p>{{ __('Domiciliarios') }}</p>
       </a>
-    </li>
+    </li> --}}
     <li class="nav-item{{ $activePage == 'factura' ? ' active' : '' }}">
       <a class="nav-link" href="">
         <i class="material-icons">library_books</i>

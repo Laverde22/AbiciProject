@@ -31,7 +31,7 @@
                       <i class="material-icons">face</i>
                   </span>
                 </div>
-                <input type="text" name="name" class="form-control" placeholder="{{ __('Name...') }}" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                <input type="text" name="name" class="form-control" placeholder="{{ __('Nombre...') }}" value="{{ old('name') }}" required autocomplete="name" autofocus>
               </div>
               @if ($errors->has('name'))
                 <div id="name-error" class="error text-danger pl-3" for="name" style="display: block;">
@@ -170,7 +170,7 @@
                     <i class="material-icons">lock_outline</i>
                   </span>
                 </div>
-                <input type="password" name="password" id="password" class="form-control" placeholder="{{ __('Password...') }}" required autocomplete="new-password">
+                <input type="password" name="password" id="password" class="form-control" placeholder="{{ __('Contraseña...') }}" required autocomplete="new-password">
               </div>
               @if ($errors->has('password'))
                 <div id="password-error" class="error text-danger pl-3" for="password" style="display: block;">
@@ -185,7 +185,7 @@
                     <i class="material-icons">lock_outline</i>
                   </span>
                 </div>
-                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="{{ __('Confirm Password...') }}" required autocomplete="new-password">
+                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="{{ __('Confirmar Contraseña...') }}" required autocomplete="new-password">
               </div>
               @if ($errors->has('password_confirmation'))
                 <div id="password_confirmation-error" class="error text-danger pl-3" for="password_confirmation" style="display: block;">

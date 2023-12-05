@@ -1,11 +1,6 @@
 <?php
 
 namespace App\Actions\Fortify;
-<<<<<<< HEAD
- 
-=======
-
->>>>>>> f8bb313e88bb214f9768cae625425b51b8dff16d
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
 use Illuminate\Support\Facades\Validator;
@@ -46,6 +41,6 @@ class CreateNewUser implements CreatesNewUsers
         // Asignar el rol al usuario después de crearlo
         $user->assignRole('User');
     
-        return $user;
+        return $user; 
     }
 }

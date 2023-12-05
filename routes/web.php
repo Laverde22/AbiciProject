@@ -52,6 +52,7 @@ Route::get('administrador/listpedidos',[App\Http\Controllers\AdminController::cl
 Route::get('pedidos/{id}/editar',[App\Http\Controllers\AdminController::class,'edit'])->name('pedidos.edit');
 Route::put('pedidos/{id}/actualizar',[App\Http\Controllers\AdminController::class,'update'])->name('pedidos.update');
 Route::get('administrador/listclientes',[App\Http\Controllers\AdminController::class,'indexclientes'])->name('admin.listclientes');
+Route::get('administrador/listpersonal',[App\Http\Controllers\AdminController::class,'indexpersonal'])->name('admin.listpersonal');
 Route::put('/administrador/{id}/cancelar', [App\Http\Controllers\AdminController::class, 'cancelar'])->name('pedidos.cancelar');
 
 Route::get('/pedidos', [AdminController::class, 'listPedidos'])->name('pedidos.list');
@@ -85,16 +86,7 @@ Route::resource('facturas', App\Http\Controllers\FacturasController::class);
 
 Route::resource('domiciliario', App\Http\Controllers\DomiController::class);
 
-<<<<<<< HEAD
-/* Regitrar domiciliario  */
-Route::get('administrador/listpersonal',[App\Http\Controllers\RegisterController::class,'indexpersonal'])->name('admin.listpersonal');
 
-
-=======
->>>>>>> f8bb313e88bb214f9768cae625425b51b8dff16d
-
+Route::post('administrador/registrarDomi',[App\Http\Controllers\RegisterController::class,'store'])->name('registrarDomi');
 
 });
-
-
-
