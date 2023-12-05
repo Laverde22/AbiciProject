@@ -1,8 +1,6 @@
 @extends('layouts.main', ['activePage' => 'dashboard', 'titlePage' => __('INICIO')])
 <link rel="stylesheet" href="{{asset('css/dashboardadmin.css')}}">
 
-<link rel="stylesheet" href="{{ asset('css/dashboardadmin.css') }}">
-
 @section('content')
     <div class="content">
         <div class="container-fluid">
@@ -13,7 +11,7 @@
                         <div class="card-deck mt-4">
                             <!-- Tarjeta 1 - Entrega a Domicilio -->
                             <div class="card">
-                                <a href="{{ route('login') }}"><img src="{{ asset('img/welcome/diligencias.png') }}" class="card-img-top border-redon" alt="..."></a>
+                                <a href=""><img src="{{ asset('img/welcome/diligencias.png') }}" class="card-img-top border-redon" alt="..."></a>
                                 <div class="card-body">
                                     <h5 class="card-title">Entrega a Domicilio</h5>
                                     <p class="card-text">Recibe tus platillos favoritos directamente en la puerta de tu casa.</p>
@@ -22,7 +20,7 @@
 
                             <!-- Tarjeta 2 - Trabajos de Mensajería -->
                             <div class="card">
-                                <a href="{{ route('login') }}"><img src="{{ asset('img/welcome/domicilio.png') }}" class="card-img-top" alt="..."></a>
+                                <a href=""><img src="{{ asset('img/welcome/domicilio.png') }}" class="card-img-top" alt="..."></a>
                                 <div class="card-body">
                                     <h5 class="card-title">Trabajos de Mensajería</h5>
                                     <p class="card-text">Pagamos tus recibos y te ayudamos con el traslado de objetos.</p>
@@ -31,7 +29,7 @@
 
                             <!-- Tarjeta 3 - Otro Servicio -->
                             <div class="card">
-                                <a href="{{ route('login') }}"><img src="{{ asset('img/welcome/mensajeria.png') }}" class="card-img-top" alt="..."></a>
+                                <a href=""><img src="{{ asset('img/welcome/mensajeria.png') }}" class="card-img-top" alt="..."></a>
                                 <div class="card-body">
                                     <h5 class="card-title">Otro Servicio</h5>
                                     <p class="card-text">Descripción del servicio adicional que ofreces.</p>
@@ -40,7 +38,7 @@
                         </div>
                         @role('user')
                         <div class="text-center mt-4">
-                            <a href="{{ route('login') }}" class="btn btn-primary">Pide Tu Primer Servicio!!</a> 
+                            <a href="" class="btn btn-primary">Pide Tu Primer Servicio!!</a> 
                         </div>
                         @endrole
                     </div>

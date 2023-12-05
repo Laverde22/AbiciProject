@@ -10,20 +10,18 @@
                     <p>No hay pedidos disponibles para ti.</p>
                 @else
                     @foreach($pedidos as $pedido)
-                        @if($pedido->estado === 'Pendiente')
                             <div class="col-md-4 mb-4">
                                 <div class="card">
                                     <div class="card-body">
-                                        
-                                        <p class="card-text">Cliente: {{ $pedido->nombre }}</p>
+                                        <p class="card-text">Cliente: {{ $pedido->idCliente }}</p>
                                         <p class="card-text">Productos: {{ $pedido->Productos }}</p>
                                         <p class="card-text">Dirección: {{ $pedido->Direccion }}</p>
                                         <p class="card-text">Estado: {{ $pedido->estado }}</p>
+                                        
                                         <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCrearFactura"><i class="material-icons">library_books</i> Crear Factura</button>
                                     </div>
                                 </div>
                             </div>
-                        @endif
 
                         <div class="modal fade" id="modalCrearFactura" tabindex="-1" role="dialog" aria-labelledby="modalCrearFacturaLabel{{ $pedido->IdPedido }}" aria-hidden="true">
                             <div class="modal-dialog" role="document">
@@ -66,6 +64,7 @@
                                                 <label for="valorservicio">Valor de Servicio:</label>
                                                 <input type="number" class="form-control" id="valorservicio" name="valorservicio" required>
                                             </div>
+
                                             <!-- Otros campos si los hay -->
                                             <button type="submit" class="btn btn-success">Guardar Factura</button>
                                         </form>

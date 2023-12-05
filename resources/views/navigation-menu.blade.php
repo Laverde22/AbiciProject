@@ -25,11 +25,7 @@
                         {{ __('Inicio') }}
                     </x-nav-link>
                 </div>
-                <div class="hidden space-x-8 sm:-my-px sm:ml-10 sm:flex">
-                    <x-nav-link class="botones_nav text-decoration-none" href="{{ route('cliente.pedidos') }}" :active="request()->routeIs('dashboard')">
-                        {{ __('Mis Domicilios') }}
-                    </x-nav-link>
-                </div>
+
          
             </div>
 

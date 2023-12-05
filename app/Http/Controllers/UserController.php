@@ -20,17 +20,16 @@ class UserController extends Controller
     {
         $cliente = auth()->user()->id;
 
-        $pedidos = DB:: table ('detallefactura')
-            ->join('pedidos', 'detallefactura.idpedido', '=', 'pedidos.IdPedido')
-            ->select('pedidos.productos as productos', 'pedidos.direccion as direccion', 'pedidos.created_at as fecha','pedidos.descripcionproductos as descriprodu','detallefactura.valorproductos as valproductos',
-                      'detallefactura.valorservicio as valservicio','detallefactura.valortotal as valtotal')
-            ->where('pedidos.idCliente','=', $cliente)
-            ->get();
+        $direccion = auth()->user()->direccion;
 
-        return $pedidos;
-
-        /* return view('users/mispedidos',['pedidos' => $pedidos]);
- */    }
+        $pedidos = DB::table('pedidos')
+        ->join('Users', 'pedidos.idCliente','=','Users.id')
+        ->select( DB::raw("CONCAT(users.name, ' ', users.apellidos) AS nombrecompleto"),'users.rol','pedidos.idCliente','pedidos.productos as Productos','pedidos.DescripcionProductos as descripedi','pedidos.Direccion','pedidos.estado','pedidos.IdPedido')
+        ->where('pedidos.idcliente','=', $cliente)
+        ->orderBy(DB::raw("(CASE WHEN pedidos.estado = 'Pendiente' THEN 0 ELSE 1 END)"))
+        ->get();       
+        return view('users/mispedidos',['pedidos' => $pedidos,'direccion'=>$direccion]);
+    }
 
     /**
      * Show the form for creating a new resource.
@@ -46,6 +45,18 @@ class UserController extends Controller
     public function store(Request $request)
     {
         //
+        $pedido = new Pedidos();
+        $pedido->productos = $request->input('productos');
+        $pedido->DescripcionProductos = $request->input('descripcion');
+        $pedido->direccion = $request->input('direccion');
+        $pedido->fechahora = $request->input('fechahora');
+        $idCliente = Auth()->User()->id;
+        $pedido->idcliente = $idCliente;
+        // Guardar el pedido en la base de datos
+        $pedido->save();
+
+        // Redirigir a la página que desees después de guardar el pedido
+        return redirect()->route('dashboard');
     }
 
     /**

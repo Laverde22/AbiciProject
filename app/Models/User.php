@@ -10,10 +10,7 @@ use Laravel\Fortify\TwoFactorAuthenticatable;
 use Laravel\Jetstream\HasProfilePhoto;
 use Laravel\Sanctum\HasApiTokens;
 use Spatie\Permission\Traits\HasRoles;
-<<<<<<< HEAD
 use Illuminate\Database\Eloquent\Model;
-=======
->>>>>>> f8bb313e88bb214f9768cae625425b51b8dff16d
 
 class User extends Authenticatable
 {
@@ -71,12 +68,5 @@ class User extends Authenticatable
     protected $appends = [
         'profile_photo_url',
     ];
-<<<<<<< HEAD
 
-    public function roles()
-    {
-        return $this->morphToMany(Role::class, 'model');
-    }
-=======
->>>>>>> f8bb313e88bb214f9768cae625425b51b8dff16d
 }

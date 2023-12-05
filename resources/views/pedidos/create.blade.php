@@ -3,7 +3,7 @@
     <section>
         <div class="container-form">
             <h1 class="text-center">Crea Tu Pedido</h1>
-            <form action="{{route('pedido.guardar') }}"method="POST">
+            <form action=""method="POST">
                 @csrf
                 <div class="row">
                     <!-- Primera Columna -->

@@ -13,37 +13,12 @@ use DB;
 class PedidosController extends Controller
 {
    
-    public function __construct()
-    {
-        $this->middleware('auth');
-    }
 
     /**
      * Display a listing of the resource.
      */
      
-    public function index(Request $request)
-    {
-       
 
-    }
-
-    /**
-     * Show the form for creating a new resource.
-     */
-    public function crearpedido()
-    {
-        //
-        $direccion = auth()->user()->direccion;
-        return view ('pedidos/create', ['direccion' => $direccion]);
-    }
-
-    public function create()
-    {
-        //
-        return view('pedidos/create');
-    
-    }
 
     /**
      * Store a newly created resource in storage.
@@ -78,10 +53,10 @@ class PedidosController extends Controller
     {
         $cliente = auth()->user()->id;
 
-        $pedidos = DB:: table ('detallefactura')
-            ->join('pedidos', 'detallefactura.idpedido', '=', 'pedidos.IdPedido')
-            ->select('pedidos.productos as productos', 'pedidos.direccion as direccion', 'pedidos.created_at as fecha','pedidos.descripcionproductos as descriprodu','detallefactura.valorproductos as valproductos',
-                      'detallefactura.valorservicio as valservicio','detallefactura.valortotal as valtotal')
+        $pedidos = DB:: table ('detallefacturas')
+            ->join('pedidos', 'detallefacturas.idpedido', '=', 'pedidos.IdPedido')
+            ->select('pedidos.productos as productos', 'pedidos.direccion as direccion', 'pedidos.created_at as fecha','pedidos.descripcionproductos as descriprodu','detallefacturas.valorproductos as valproductos',
+                      'detallefacturas.valorservicio as valservicio','detallefacturas.valortotal as valtotal')
             ->where('pedidos.idcliente','=', $cliente)
             ->get();
 

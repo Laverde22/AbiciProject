@@ -7,7 +7,6 @@
                 <div class="col-md-12">
                     <h2>Listado de Facturas</h2>
                     <div class="">
-                            <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#modalCrearFactura"><i class="material-icons">library_books</i> Crear Factura</button>
                     </div>
                 </div>
             </div>

@@ -36,14 +36,9 @@ Route::get('/', function () {
     })->name('dashboard');
 }); 
 
-Route::group(['middleware' => 'auth'], routes: function(){  
-    
-/* Rutas pedido  cliente pedido*/ 
-Route::get('domicilio/crearpedido',[App\Http\Controllers\PedidosController::class,'crearpedido'])->name('domicilio.crearpedido');
-Route::post('domicilio/verificar',[App\Http\Controllers\PedidosController::class,'verificarDocumento'])->name('domicilio.create');
-Route::post('domicilio/guardar',[App\Http\Controllers\PedidosController::class,'store'])->name('domicilio.store');
-Route::get('domicilio/misdomicilios',[App\Http\Controllers\PedidosController::class,'mostrarPedidos'])->name('cliente.pedidos');
+Route::group(['middleware' => 'auth'], function(){
 
+/* Rutas pedido  cliente pedido*/ 
 
 
 /* Rutas pedido  admin */
@@ -72,12 +67,8 @@ Route::post('/cliente/{id}/actualizar-rol',[App\Http\Controllers\AdminController
 /* Rutas Barras de Busqueda  */ 
 Route::get('administrador/buscarCli', [App\Http\Controllers\BusquedasController::class, 'searchCli'])->name('admin.searchcli');
 
-
-
 /*   rutas rol user   */
-Route::resource('user', App\Http\Controllers\UserController::class);
-
-
+Route::resource('users', App\Http\Controllers\UserController::class);
 /*   RUTAS FACTURA  */ 
 Route::resource('facturas', App\Http\Controllers\FacturasController::class);
 
@@ -85,16 +76,14 @@ Route::resource('facturas', App\Http\Controllers\FacturasController::class);
 
 Route::resource('domiciliario', App\Http\Controllers\DomiController::class);
 
-<<<<<<< HEAD
 /* Regitrar domiciliario  */
 Route::get('administrador/listpersonal',[App\Http\Controllers\RegisterController::class,'indexpersonal'])->name('admin.listpersonal');
 
 
-=======
->>>>>>> f8bb313e88bb214f9768cae625425b51b8dff16d
-
-
 });
+    
+
+
 
 
 

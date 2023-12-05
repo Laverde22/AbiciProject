@@ -89,7 +89,10 @@ class FacturasController extends Controller
             $detallesfactura->TipoServicio = $request->input('servicio');
             $detallesfactura->ValorProductos = $request->input('valorproductos');
             $detallesfactura->ValorServicio = $request->input('valorservicio');
-            $detallesfactura->ValorTotal = $request->input('valortotal');
+            $valorProductos = floatval($detallesfactura->ValorProductos);
+            $valorServicio = floatval($detallesfactura->ValorServicio);
+            $valorTotal = $valorProductos + $valorServicio;
+            $detallesfactura->ValorTotal = $valorTotal;
             $detallesfactura->save();
     
             return redirect()->back()->with("success", "Tu pedido está en camino!");
