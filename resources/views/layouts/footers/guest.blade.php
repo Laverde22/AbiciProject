@@ -1,34 +1,30 @@
 <footer class="footer">
-    <div class="container">
-        <nav class="float-left">
+    <div class="container-fluid">
+      <h4 class="mb-4">Siguenos en nuestras redes!</h4> <!-- Pequeño título para el apartado -->
+  
+      <nav class="float-left">
         <ul>
-            <li>
-            <a href="https://www.creative-tim.com">
-                {{ __('Creative Tim') }}
+          <li>
+            <a href="https://www.instagram.com/abici_mensajeria/" target="_blank">
+              <i><img src="{{asset('img/instagram.png')}}" alt=""></i> Instagram
             </a>
-            </li>
-            <li>
-            <a href="https://creative-tim.com/presentation">
-                {{ __('About Us') }}
+          </li>
+          <li>
+            <a href="https://www.facebook.com" target="_blank">
+              <i><img src="{{asset('img/facebook.png')}}" alt=""></i> Facebook
             </a>
-            </li>
-            <li>
-            <a href="http://blog.creative-tim.com">
-                {{ __('Blog') }}
+          </li>
+          <li>
+            <a href="#" target="_blank">
+              <i><img src="{{asset('img/whatsapp.png')}}" alt=""></i> whatsapp
             </a>
-            </li>
-            <li>
-            <a href="https://www.creative-tim.com/license">
-                {{ __('Licenses') }}
-            </a>
-            </li>
+          </li>
         </ul>
-        </nav>
-        <div class="copyright float-right">
-        &copy;
-        <script>
-            document.write(new Date().getFullYear())
-        </script> <i class="material-icons"></i>
-        </div>
+      </nav>
+  
+      <div class="copyright float-right">
+        &copy; <script>document.write(new Date().getFullYear())</script> ABICI Company
+      </div>
     </div>
-</footer>
+  </footer>
+  

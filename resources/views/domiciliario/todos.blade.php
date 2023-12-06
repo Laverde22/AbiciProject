@@ -1,4 +1,4 @@
-@extends('layouts.main', ['activePage' => 'mispedidos', 'titlePage' => __('PEDIDOS')])
+@extends('layouts.main', ['activePage' => 'domi', 'titlePage' => __('PEDIDOS')])
 <link rel="stylesheet" href="{{ asset('css/tablas.css') }}">
 
 @section('content')

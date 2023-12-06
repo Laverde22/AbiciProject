@@ -1,7 +1,7 @@
 
-img{
+img.carusel{
     border-radius: 25%;
-    height: 70%;
+    height: 120px;
     width: 70%;
 }
 
@@ -35,6 +35,20 @@ img{
 .card-text {
     color: #555;
     margin-bottom: 20px;
+}
+
+.controls a {
+    background-color: #276d34; /* Cambia el color de fondo a tu preferencia */
+    color: #fff; /* Cambia el color del texto a tu preferencia */
+    border-radius: 3px; /* Agrega bordes redondeados si es necesario */
+    width: 25px;
+    height: 25px;
+    margin-top: 50px;
+}
+
+.controls a:hover {
+    background-color: #29b95b; /* Cambia el color de fondo al pasar el mouse sobre el botón */
+    text-decoration: none; /* Evita el subrayado en el hover */
 }
 
 

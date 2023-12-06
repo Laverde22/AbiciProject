@@ -29,7 +29,7 @@ class DomiController extends Controller
     
         $proveedores = Provedores::orderBy('nombre', 'asc')->get();
         
-        return view('domiciliario.pedidos', compact('pedidos', 'proveedores'));
+        return view('domiciliario.todos', compact('pedidos', 'proveedores'));
     }
 
 

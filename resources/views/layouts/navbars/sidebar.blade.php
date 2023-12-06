@@ -93,18 +93,11 @@
 </ul>
 @endif
 @if(auth()->user()->hasRole('domi'))
-<li >
-  <a class="nav-link dropdown-toggle" href="#" id="dropdownPedidos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="{{ $activePage == 'pedidos' ? 'true' : 'false' }}">
+<li class="nav-item{{ $activePage == 'domi' ? ' active' : '' }}">
+  <a class="nav-link" href="{{route('domiciliario.index')}}">
     <i class="material-icons">shopping_cart</i>
     <p>{{ __('Mis Pedidos') }}</p>
   </a>
-  <div class="dropdown-menu{{ $activePage == 'pedi' ? ' show' : '' }}" aria-labelledby="dropdownPedidos">
-    <a class="dropdown-item" href="{{ route('domiciliario.index', ['estado' => 'todos']) }}">Todos</a>
-    <a class="dropdown-item" href="{{ route('domiciliario.index', ['estado' => 'pendientes']) }}">Pendientes</a>
-    <a class="dropdown-item" href="{{ route('domiciliario.index', ['estado' => 'enproceso']) }}">En Proceso</a>
-    <a class="dropdown-item" href="{{ route('domiciliario.index', ['estado' => 'finalizados']) }}">Finalizados</a>
-    <a class="dropdown-item" href="{{ route('domiciliario.index', ['estado' => 'denegados']) }}">Denegados</a>
-  </div>
 </li>
   <li class="nav-item{{ $activePage == 'factura' ? ' active' : '' }}">
   <a class="nav-link" href="{{route('facturas.index')}}">
