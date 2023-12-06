@@ -1,4 +1,4 @@
-@extends('layouts.main', ['activePage' => 'domiciliarios', 'titlePage' => __('Clientes')])
+@extends('layouts.main', ['activePage' => 'domiciliarios', 'titlePage' => __('Domiciliarios')])
 <link rel="stylesheet" href="{{asset('css/dashboardadmin.css')}}">
 @section('content')
     <div class="content"> 

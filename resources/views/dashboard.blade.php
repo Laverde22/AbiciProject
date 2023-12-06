@@ -1,4 +1,4 @@
-@extends('layouts.main', ['class' => 'off-canvas-sidebar', 'activePage' => '', 'title' => __('ABICI DOMICILIOS Y MENSAJERIA')])
+@extends('layouts.main', ['activePage' => 'dashboard', 'titlePage' => __('Dashboard')])
 <link rel="stylesheet" href="{{ asset('css/dashboardadmin.css') }}">
 
 @section('content')

@@ -32,7 +32,7 @@
                         <div class="col-md-4 mb-4">
                             <div class="card">
                                 <div class="card-body">
-                                    <h4 class="card-title">{{ $cliente->name . ' ' . $cliente->apellidos }}</h4>
+                                    <h4 class="card-title">{{ $cliente->nombrecompleto }}</h4>
                                     <p class="card-text">Teléfono: {{ $cliente->telefono }}</p>
                                     <p class="card-text">Dirección: {{ $cliente->direccion }}</p>
                                     <p class="card-text">Correo: {{ $cliente->email }}</p>
@@ -46,14 +46,14 @@
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
-                                        <h5 class="modal-title" id="modalCliente{{ $cliente->id }}Label">Detalles de  {{ $cliente->name }}</h5>
+                                        <h5 class="modal-title" id="modalCliente{{ $cliente->id }}Label">Detalles de  {{ $cliente->nombrecompleto }}</h5>
                                         <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                         </button>
                                     </div>
                                     <div class="modal-body">
                                         <!-- Mostrar aquí los detalles del cliente -->
-                                        <p><strong>Nombre:</strong>{{ $cliente->name . ' ' . $cliente->apellidos }}</p>
+                                        <p><strong>Nombre:</strong>{{ $cliente->nombrecompleto}}</p>
                                         <p><strong>Teléfono:</strong> {{ $cliente->telefono }}</p>
                                         <p><strong>Dirección:</strong> {{ $cliente->direccion }}</p>
                                         <p><strong>Correo:</strong> {{ $cliente->email }}</p>
@@ -61,6 +61,9 @@
                                         <p><strong>{{ $cliente->tipoDocumento }}:</strong> {{ $cliente->numDocumento }}</p>
                                         
                                         {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarRolModal{{ $cliente->id }}">Editar Estado</button> --}}
+                                        <p ><strong>Fecha De Nacimineto:</strong> {{ $cliente->fechanacimiento }}</p>
+                                        <p><strong>{{ $cliente->tipodocumento }}:</strong> {{ $cliente->numdocumento }}</p>
+                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarRolModal{{ $cliente->id }}">Editar Rol</button>
                                         <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                                     </div>
                                    
@@ -90,6 +93,7 @@
                                             </div>
                                         </div>
                                     </div>
+                                
                                     
                                 </div>
                             </div>

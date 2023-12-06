@@ -1,5 +1,5 @@
 <footer class="footer">
-    <div class="container-fluid">
+    <div class="container">
       <h4 class="mb-4">Siguenos en nuestras redes!</h4> <!-- Pequeño título para el apartado -->
   
       <nav class="float-left">

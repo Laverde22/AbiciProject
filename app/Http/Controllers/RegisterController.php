@@ -19,6 +19,30 @@ class RegisterController extends Controller
     public function index()
     {
 
+        return view('administrador/register' , ['usuarios' => $usuarios]);
+    } */
+
+    public function indexpersonal()
+    {
+        $usuarios = Auth::user();
+        $rol = DB::table('model_has_roles')
+        ->join('users', 'model_has_roles.model_id', '=', 'users.id')
+        ->select(
+            DB::raw("CONCAT(users.name, ' ', users.apellidos) AS nombrecompleto"),
+            'users.direccion',
+            'users.id',
+            'users.telefono',
+            'users.email',
+            'users.fechanacimiento',
+            'users.tipodocumento',
+            'users.numdocumento',
+            'model_has_roles.role_id'
+        )
+        ->orderBy('users.id') // Ordenar por el estado de forma ascendente
+        ->where('model_has_roles.role_id', '=', '9') // Filtrar por estado pendiente
+        ->get(); 
+            
+        return view('administrador/register' , ['rol' => $rol]);
     }
     
 
