@@ -155,17 +155,29 @@ class AdminController extends Controller
 
     public function indexclientes()
     {
-        //
-        $usuarios = User::orderBy('name', 'asc')->get();
-
-        return view('administrador/listclientes' , ['usuarios' => $usuarios]);
+        $usuarios = Auth::user();
+        $rol = DB::table('model_has_roles')
+        ->join('users', 'model_has_roles.model_id', '=', 'users.id')
+        ->select(
+            'users.name',
+            'users.apellidos',
+            'users.email',
+            'users.fechaNacimiento',
+            'users.numDocumento',
+            'users.tipoDocumento',
+            'users.direccion',
+            'users.id',
+            'users.telefono',
+            'model_has_roles.role_id'
+        )
+        ->orderBy('users.id') // Ordenar por el estado de forma ascendente
+        ->where('model_has_roles.role_id', '=', '8') // Filtrar por estado pendiente
+        ->get(); 
+            
+        return view('administrador/listclientes' , ['rol' => $rol]);
     }
 
 
-<<<<<<< HEAD
-
-=======
->>>>>>> f8bb313e88bb214f9768cae625425b51b8dff16d
     public function edit( $id)
     {
         //
@@ -232,5 +244,30 @@ class AdminController extends Controller
 
         return redirect()->route('admin.listpedidos');  
     }
+
+    public function indexpersonal()
+    {
+        $usuarios = Auth::user();
+        $rol = DB::table('model_has_roles')
+        ->join('users', 'model_has_roles.model_id', '=', 'users.id')
+        ->select(
+            'users.name',
+            'users.apellidos',
+            'users.email',
+            'users.fechaNacimiento',
+            'users.numDocumento',
+            'users.tipoDocumento',
+            'users.direccion',
+            'users.id',
+            'users.telefono',
+            'model_has_roles.role_id'
+        )
+        ->orderBy('users.id') // Ordenar por el estado de forma ascendente
+        ->where('model_has_roles.role_id', '=', '9') // Filtrar por estado pendiente
+        ->get(); 
+            
+        return view('administrador/listpersonal' , ['rol' => $rol]);
+    }
+    
 }
 

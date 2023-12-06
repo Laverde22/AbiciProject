@@ -4,7 +4,7 @@
     <div class="content">
         <div class="container-fluid">
             <h2>Listado de Clientes</h2>
-            @if($usuarios->isEmpty())
+            @if($rol->isEmpty())
                 <p>No hay clientes que cumplan estas caracteristicas</p>
             @else
             <form action="{{ route('admin.searchcli') }}" method="GET" class="mb-4">
@@ -27,7 +27,7 @@
             
             
                 <div class="row">
-                    @foreach($usuarios as $cliente)
+                    @foreach($rol as $cliente)
                         <div class="col-md-4 mb-4">
                             <div class="card">
                                 <div class="card-body">
@@ -58,8 +58,8 @@
                                         <p><strong>Correo:</strong> {{ $cliente->email }}</p>
                                         <p ><strong>Fecha De Nacimineto:</strong> {{ $cliente->fechaNacimiento }}</p>
                                         <p><strong>{{ $cliente->tipoDocumento }}:</strong> {{ $cliente->numDocumento }}</p>
-                                        <p><strong> Rol:{{ $cliente->rol}}</strong></p>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarRolModal{{ $cliente->id }}">Editar Rol</button>
+                                        
+                                        {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarRolModal{{ $cliente->id }}">Editar Rol</button> --}}
                                         <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                                     </div>
                                    
@@ -68,7 +68,7 @@
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="editarRolModal{{ $cliente->id }}Label">Editar Rol de {{ $cliente->name }}</h5>
+                                                    {{-- <h5 class="modal-title" id="editarRolModal{{ $cliente->id }}Label">Editar Rol de {{ $cliente->name }}</h5> --}}
                                                 </div>
                                                 <form action="{{ route('cliente.actualizar-rol', ['id' => $cliente->id]) }}" method="POST">
                                                     @csrf
@@ -83,7 +83,7 @@
                                                     </div>
                                                     <div class="modal-footer">
                                                         <!-- Agrega aquí el botón para guardar el nuevo rol -->
-                                                        <button type="submit" class="btn btn-primary">Actualizar Rol</button>
+                                                        {{-- <button type="submit" class="btn btn-primary">Actualizar Rol</button> --}}
                                                         <button type="button" class="btn btn-primary" onclick="location.reload();">Cerrar</button>                                                    </div>
                                                 </form>
                                             </div>

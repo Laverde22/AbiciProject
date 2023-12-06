@@ -1,11 +1,8 @@
 @extends('layouts.main', ['activePage' => 'domiciliarios', 'titlePage' => __('Clientes')])
 <link rel="stylesheet" href="{{asset('css/dashboardadmin.css')}}">
 @section('content')
-<<<<<<< HEAD
     <div class="content"> 
-=======
     <div class="content">
->>>>>>> f8bb313e88bb214f9768cae625425b51b8dff16d
         <div class="container-fluid">
             <h2>Listado de Domiciliarios</h2>
             @if($usuarios->isEmpty())

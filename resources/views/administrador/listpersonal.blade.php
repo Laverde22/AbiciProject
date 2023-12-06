@@ -4,7 +4,8 @@
     <div class="content">
         <div class="container-fluid">
             <h2>Listado de Personal</h2>
-            @if($usuarios->isEmpty())
+            <a href="#" class="btn btn-primary btn-ver-mas" data-toggle="modal" data-target="#registrarDomi">Registrar domiciliario</a>
+            @if($rol->isEmpty())
                 <p>No hay clientes que cumplan estas caracteristicas</p>
             @else
             <form action="{{ route('admin.searchcli') }}" method="GET" class="mb-4">
@@ -27,7 +28,7 @@
             
             
                 <div class="row">
-                    @foreach($usuarios as $cliente)
+                    @foreach($rol as $cliente)
                         <div class="col-md-4 mb-4">
                             <div class="card">
                                 <div class="card-body">
@@ -58,8 +59,8 @@
                                         <p><strong>Correo:</strong> {{ $cliente->email }}</p>
                                         <p ><strong>Fecha De Nacimineto:</strong> {{ $cliente->fechaNacimiento }}</p>
                                         <p><strong>{{ $cliente->tipoDocumento }}:</strong> {{ $cliente->numDocumento }}</p>
-                                        <p><strong> Rol:{{ $cliente->rol}}</strong></p>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarRolModal{{ $cliente->id }}">Editar Rol</button>
+                                        
+                                        {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarRolModal{{ $cliente->id }}">Editar Estado</button> --}}
                                         <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                                     </div>
                                    
@@ -68,22 +69,22 @@
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="editarRolModal{{ $cliente->id }}Label">Editar Rol de {{ $cliente->name }}</h5>
+                                                    <h5 class="modal-title" id="editarRolModal{{ $cliente->id }}Label">Editar Estado de {{ $cliente->name }}</h5>
                                                 </div>
                                                 <form action="{{ route('cliente.actualizar-rol', ['id' => $cliente->id]) }}" method="POST">
                                                     @csrf
                                                     <div class="modal-body">
                                                         <!-- Selección del nuevo rol -->
-                                                        <label for="selectRol">Seleccionar Rol:</label>
+                                                        <label for="selectRol">Seleccionar Estadol:</label>
                                                         <select class="form-control" id="selectRol" name="rol">
-                                                            <option value="user">Usuario</option>
-                                                            <option value="domi">Domiciliario</option>
+                                                            <option value="user">Activo</option>
+                                                            <option value="domi">Inactivo</option>
                                                             <!-- Agrega las opciones correspondientes a los roles disponibles -->
                                                         </select>
                                                     </div>
                                                     <div class="modal-footer">
                                                         <!-- Agrega aquí el botón para guardar el nuevo rol -->
-                                                        <button type="submit" class="btn btn-primary">Actualizar Rol</button>
+                                                        {{-- <button type="submit" class="btn btn-primary">Actualizar Estado</button> --}}
                                                         <button type="button" class="btn btn-primary" onclick="location.reload();">Cerrar</button>                                                    </div>
                                                 </form>
                                             </div>
@@ -100,3 +101,39 @@
     </div>
 
 @endsection
+
+<div class="modal fade" id="registrarDomi" tabindex="-1" role="dialog" aria-labelledby="registrarDomi" aria-hidden="true" data-backdrop="static" >
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h5 class="modal-title" id="registrarDomi">Registrar Domiciliario</h5>
+            </div>
+            <form action="{{ route('registrarDomi') }}" method="POST">
+            @csrf
+            <div class="modal-body">
+                <!-- Selección del nuevo rol -->
+                <input type="text" name="name" class="form-control" placeholder="{{ __('Name...') }}" value="{{ old('name') }}" required autocomplete="name" autofocus>
+                <input type="text" name="apellidos" class="form-control" placeholder="{{ __('Apellido...') }}" value="{{ old('apellidos') }}" required autocomplete="apellidos">
+                <div class="input-group">
+                    <select name="TipoDocumento" class="form-control" required>
+                      <option value="CC">{{ __('Cedula de Ciudadania') }}</option>
+                      <option value="TI">{{ __('Targeta de Identidad') }}</option>
+                      <!-- Agrega otras opciones según sea necesario -->
+                    </select>
+                </div>
+                <input type="text" id="NumDocumento" name="NumDocumento" class="form-control" placeholder="{{ __('Numero de Documento...') }}" value="{{ old('NumDocumento') }}" required>
+                <input type="date" name="FechaNacimiento" class="form-control" placeholder="{{ __('Fecha de Nacimiento...') }}" value="{{ old('FechaNacimiento') }}" required>
+                <input type="text" name="Telefono" class="form-control" placeholder="{{ __('Telefono...') }}" value="{{ old('Telefono') }}" required>
+                <input type="email" name="email" class="form-control" placeholder="{{ __('Email...') }}" value="{{ old('email') }}" required autocomplete="username">
+                <input type="text" name="Direccion" class="form-control" placeholder="{{ __('Direccion...') }}" value="{{ old('Direccion') }}" required>
+                <input type="password" name="password" id="password" class="form-control" placeholder="{{ __('Contraseña...') }}" required autocomplete="new-password">
+                <input type="password" name="password_confirmation" id="password_confirmation" class="form-control" placeholder="{{ __('Confirmar Contraseña...') }}" required autocomplete="new-password">
+            </div>
+                <div class="modal-footer">
+                    <button type="submit" class="btn btn-primary">Registrar</button>
+                    <button type="button" class="btn btn-primary" onclick="location.reload();">Cancelar</button>                                                    
+                </div>
+            </form>
+        </div>
+    </div>
+</div>

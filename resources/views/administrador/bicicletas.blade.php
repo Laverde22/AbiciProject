@@ -61,7 +61,7 @@
                                         <p><strong>Correo:</strong> {{ $cliente->email }}</p>
                                         <p ><strong>Fecha De Nacimiento:</strong> {{ $cliente->fechaNacimiento }}</p>
                                         <p><strong>{{ $cliente->tipoDocumento }}:</strong> {{ $cliente->numDocumento }}</p>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarRolModal">Editar Rol</button>
+                                        {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarRolModal">Editar Rol</button> --}}
                                         <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                                     </div>
                                    

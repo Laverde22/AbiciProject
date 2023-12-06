@@ -21,8 +21,10 @@
   @if(auth()->user()->hasRole('admin'))
   <li class="nav-item{{ $activePage == 'personal' ? ' active' : '' }}">
     <a class="nav-link" href="{{ route('admin.listpersonal') }}">
-      <i class="material-icons">add</i>
-        <p>{{ __('Personal') }} </p>
+      <i class="material-icons">store</i>
+        <p>{{ __('Domiciliarios') }} </p>
+    </a>
+  </li>
 
   <li class="nav-item dropdown{{ $activePage == 'pedidos' ? ' show active' : '' }}">
     <a class="nav-link dropdown-toggle" href="#" id="dropdownPedidos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="{{ $activePage == 'pedidos' ? 'true' : 'false' }}">
@@ -54,12 +56,12 @@
       </div>
   </li>
   
-    <li class="nav-item{{ $activePage == 'domiciliarios' ? ' active' : '' }}">
+ {{--    <li class="nav-item{{ $activePage == 'domiciliarios' ? ' active' : '' }}">
       <a class="nav-link" href="{{route('domiciliarios.index')}}">
         <i class="material-icons">store</i>
         <p>{{ __('Domiciliarios') }}</p>
       </a>
-    </li>
+    </li> --}}
     <li class="nav-item{{ $activePage == 'factura' ? ' active' : '' }}">
       <a class="nav-link" href="">
         <i class="material-icons">library_books</i>
