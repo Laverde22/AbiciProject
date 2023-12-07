@@ -19,9 +19,8 @@
                                         <td><h3>Cliente</h3></td>
                                         <td><h3>Productos</h3></td>
                                         
-                                        <td><h3>Email</h3></td>
+                                        <td><h3>Direccion</h3></td>
                                         <td><h3>Estado</h3></td>
-                                        <td></td>
                                         <td></td>
                                         <td></td>
                                     </tr>

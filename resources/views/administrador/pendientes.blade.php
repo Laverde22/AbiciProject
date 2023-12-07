@@ -11,20 +11,43 @@
                 @else
                     @foreach($pedidos as $pedido)
                         <div class="col-md-4 mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <p class="card-text">Cliente: {{ $pedido->name }}</p>
-                                    <p class="card-text">Productos: {{ $pedido->Productos }}</p>
-                                    <p class="card-text">Descripción Productos: {{ $pedido->descripedi }}</p>
-                                    <p class="card-text">Dirección: {{ $pedido->Direccion }}</p>
-                                    <p class="card-text 
-                                    @if($pedido->estado === 'Pendiente') text-danger font-weight-bold 
-                                    @elseif($pedido->estado === 'Finalizado') text-secundary font-weight-bold 
-                                    @elseif($pedido->estado === 'En Proceso') text-primary font-weight-bold 
-                                    @endif">
-                                    Estado: {{ $pedido->estado }}
-                                </p><a href="#" class="btn btn-primary btn-aceptar" data-toggle="modal" data-target="#modalEditarPedido"><i class="material-icons">check</i> ACEPTAR</a> 
-                                    <button class="btn btn-primary" data-toggle="modal" data-target="#modalPedido{{ $pedido->IdPedido }}"><i class="material-icons">add</i> MAS INFO...</button>
+                            <div class="">
+                                <div class="">
+                                    <table class="table table-hover">
+
+                                        <tr>
+                                            <td><h3>Cliente</h3></td>
+                                            <td><h3>Productos</h3></td>
+                                            <td><h3>Descripción</h3></td>
+                                            <td><h3>direccion</h3></td>
+                                            <td><h3>Estado</h3></td>
+                                            <td></td>
+                                            <td></td>
+                                            <td></td>
+                                        </tr>
+
+                                        @foreach($pedidos as $pedido)
+                                        <tr>
+                                            <td class="card-text" style="white-space: nowrap;">{{ $pedido->name }}</td>
+                                            <td class="card-text">{{ $pedido->Productos }}</td>
+                                            <td class="card-text">{{ $pedido->descripedi}}</td>
+                                            <td class="card-text" style="white-space: nowrap;">{{ $pedido->Direccion }}</td>
+
+                                            <td class="card-text 
+                                            @if($pedido->estado === 'Pendiente') text-danger font-weight-bold 
+                                            @elseif($pedido->estado === 'Finalizado') text-secundary font-weight-bold 
+                                            @elseif($pedido->estado === 'En Proceso') text-primary font-weight-bold 
+                                            @endif" style="white-space: nowrap;">{{ $pedido->estado }}</td>
+                                            <td></p><a href="#" class="btn btn-primary btn-aceptar" data-toggle="modal" data-target="#modalEditarPedido"><i class="material-icons">check</i> ACEPTAR</a> </td>
+                                            <td><button class="btn btn-primary" data-toggle="modal" data-target="#modalPedido{{ $pedido->IdPedido }}"><i class="material-icons">add</i> MAS INFO...</button></td>
+                                            
+                                        </tr>
+                                        
+                                        @endforeach
+                                        </table>
+
+                                
+                                    
                                 </div>
                             </div>
                         </div>
