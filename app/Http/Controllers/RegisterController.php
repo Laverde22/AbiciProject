@@ -20,7 +20,7 @@ class RegisterController extends Controller
     {
 
         return view('administrador/register' , ['usuarios' => $usuarios]);
-    } */
+    } 
 
     public function indexpersonal()
     {

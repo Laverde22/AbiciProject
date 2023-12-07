@@ -5,9 +5,7 @@
       Tip 2: you can also add an image using data-image tag
   -->
   <div class="logo">
-    <a class="simple-text">
-      {{ __('ABICI') }}
-    </a>
+  <img src="{{asset('img/abicinavideño.png')}}" alt="">
   </div>
   <div class="sidebar-wrapper">
     <ul class="nav">
@@ -84,8 +82,13 @@
      <p>{{ __('Notificaciones') }}</p>
   </a>
 </li>
+<li class="nav-item{{ $activePage == 'ayuda' ? ' active' : '' }}">
+  <a class="nav-link" href="{{route('users.ayuda')}}">
+     <i class="material-icons">help</i>
+     <p>{{ __('Ayuda') }}</p>
+  </a>
+</li>
 
-</ul>
 @endif
 @if(auth()->user()->hasRole('domi'))
 <li class="nav-item{{ $activePage == 'domi' ? ' active' : '' }}">

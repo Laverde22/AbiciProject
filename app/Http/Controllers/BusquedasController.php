@@ -39,5 +39,11 @@ class BusquedasController extends Controller
         // Devolver los resultados como una vista parcial o JSON, dependiendo de tu lógica
         return view('administrador.listpedidos', compact('pedidos'));
     }
+
+    public function index()
+    {
+        //
+        return view('users/ayuda');
+    }
     
 }

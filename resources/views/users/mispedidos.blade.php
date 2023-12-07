@@ -5,6 +5,11 @@
     <div class="content">
         <div class="container-fluid">
             <h2>Listado De Todos Tus Pedidos</h2>
+            <div >
+              <button type="button" class="btn btn-primary" id="crearPedidoBtn" data-toggle="modal" data-target="#crearPedidoModal">
+                 Crea tu Pedido
+               </button>
+             </div>
             <div class="row">
                 @if($pedidos->isEmpty())
                 <div class="card">
@@ -14,6 +19,7 @@
                       </button>
                 </div>
                 @else
+
                     @foreach($pedidos as $pedido)
                         <div class="col-md-4 mb-4">
                             <div class="card">
@@ -36,7 +42,43 @@
                             </div>
                         </div>
 
-                        <!-- Modal para cada pedido -->
+                        <div class="modal fade" id="modalPedido{{ $pedido->IdPedido }}" tabindex="-1" role="dialog" aria-labelledby="modalPedido{{ $pedido->IdPedido }}Label" aria-hidden="true">
+                          <div class="modal-dialog" role="document">
+                              <div class="modal-content">
+                                  <div class="modal-header">
+                                      <h5 class="modal-title" id="modalPedido{{ $pedido->IdPedido }}Label">Detalles del Pedido #{{ $pedido->IdPedido }}</h5>
+                                      <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                          <span aria-hidden="true">&times;</span>
+                                      </button>
+                                  </div>
+                                  <div class="modal-body">
+                                      <p><strong>Cliente:</strong> {{ $pedido->nombrecompleto }}</p>
+                                      <p><strong>Productos:</strong> {{ $pedido->Productos }}</p>
+                                      <p><strong>Descripción Productos:</strong> {{ $pedido->descripedi }}</p>
+                                      <p><strong>Dirección:</strong> {{ $pedido->Direccion }}</p>
+                                      <p><strong>Estado:</strong> {{ $pedido->estado }}</p>
+                                  </div>
+                                  <div class="modal-footer">
+                                      @if($pedido->estado === 'En Proceso')
+                                      <a href="{{ route('pedidos.cancelar', $pedido->IdPedido) }}" class="btn btn-danger" onclick="event.preventDefault();
+                                          document.getElementById('cancelar-pedido-{{ $pedido->IdPedido }}').submit();">Cancelar Pedido
+                                      </a>
+                              
+                                      <form id="cancelar-pedido-{{ $pedido->IdPedido }}" action="{{ route('pedidos.cancelar', $pedido->IdPedido) }}" method="POST" style="display: none;">
+                                          @csrf
+                                          @method('PUT')
+                                      </form>
+                                  @elseif($pedido->estado === 'Pendiente')
+                                
+                                  @elseif($pedido->estado === 'Finalizado' || $pedido->estado === 'Denegado')
+                                      <!-- Botones para estados Finalizado o Denegado -->
+                                      <button class="btn btn-success">Generar Reporte</button>
+                                  @endif
+                                  <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
+                                  </div>  
+                              </div>
+                          </div>
+                      </div>
                         
                     @endforeach
                 @endif
@@ -75,14 +117,15 @@
             </div>
             <div class="mb-3">
                 <input type="hidden" name="fechahora" value="{{ now()->format('Y-m-d H:i:s') }}">
-            </div>            
+            </div>
+          </div>             
         </div>
 
-            <!-- Otros campos del formulario -->
-  
             <button type="submit" class="btn btn-primary">Crear Pedido</button>
           </form>
         </div>
       </div>
     </div>
   </div>
+
+  

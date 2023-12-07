@@ -67,9 +67,12 @@ Route::post('/cliente/{id}/actualizar-rol',[App\Http\Controllers\AdminController
 
 /* Rutas Barras de Busqueda  */ 
 Route::get('administrador/buscarCli', [App\Http\Controllers\BusquedasController::class, 'searchCli'])->name('admin.searchcli');
+Route::get('users/ayuda', [App\Http\Controllers\BusquedasController::class,'index'])->name('users.ayuda');
 
 /*   rutas rol user   */
 Route::resource('users', App\Http\Controllers\UserController::class);
+
+
 /*   RUTAS FACTURA  */ 
 Route::resource('facturas', App\Http\Controllers\FacturasController::class);
 
