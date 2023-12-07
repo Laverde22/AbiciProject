@@ -24,9 +24,9 @@ class BusquedasController extends Controller
         $valor = $request->input('valor');
     
         // Realiza la búsqueda según el criterio seleccionado
-        $usuarios = User::where($criterio, $valor)->get();
+        $rol = User::where($criterio, $valor)->get();
     
-        return view('administrador/listclientes', ['usuarios' => $usuarios]);
+        return view('administrador/listclientes', ['rol' => $rol]);
     }
 
     public function filtrarPedidos(Request $request)

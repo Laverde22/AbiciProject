@@ -28,19 +28,32 @@
             
             
                 <div class="row">
-                    @foreach($rol as $cliente)
+                    
                         <div class="col-md-4 mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title">{{ $cliente->name. ' '. $cliente->apellidos }}</h4>
-                                    <p class="card-text">Teléfono: {{ $cliente->telefono }}</p>
-                                    <p class="card-text">Dirección: {{ $cliente->direccion }}</p>
-                                    <p class="card-text">Correo: {{ $cliente->email }}</p>
-                                    <a href="#" class="btn btn-primary btn-ver-mas" data-toggle="modal" data-target="#modalCliente{{ $cliente->id }}">Ver Más</a>
-                                </div>
+                            <div class="">
+                                <div> 
+                                    <table class="table table-hover">
+                                         <tr>
+                                             <td><h3>Nombre</h3></td>
+                                             <td><h3>Telefono</h3></td>
+                                             <td><h3>Direccion</h3></td>
+                                             <td><h3>Email</h3></td>
+                                             <td></td>
+                                         </tr>
+                                         @foreach($rol as $cliente)
+                                         <tr>
+                                             <td style="white-space: nowrap;"><h4>{{$cliente->name . ' ' . $cliente->apellidos}}</h4></td>
+                                             <td><h4>{{$cliente->telefono }}</h4></td>
+                                             <td style="white-space: nowrap;"><h4>{{$cliente->direccion}}</h4></td>
+                                             <td><h4>{{$cliente->email}}</h4></td>
+                                             <td><a href="#" class="btn btn-primary btn-ver-mas" data-toggle="modal" data-target="#modalCliente{{ $cliente->id }}">Ver Más</a></td>
+                                         </tr>
+                                         @endforeach
+                                       </table>
+                                 </div>
                             </div>
                         </div>
-
+                        @foreach($rol as $cliente)
                         <!-- Modal para cada cliente -->
                         <div class="modal fade" id="modalCliente{{ $cliente->id }}" tabindex="-1" role="dialog" aria-labelledby="modalCliente{{ $cliente->id }}Label" aria-hidden="true" data-backdrop="static" >
                             <div class="modal-dialog" role="document">
