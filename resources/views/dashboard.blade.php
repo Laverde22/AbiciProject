@@ -31,21 +31,15 @@
                             <div class="card">
                                 <a href=""><img src="{{ asset('img/welcome/mensajeria.png') }}" class="card-img-top" alt="..."></a>
                                 <div class="card-body">
-                                    <h5 class="card-title">Otro Servicio</h5>
-                                    <p class="card-text">Descripción del servicio adicional que ofreces.</p>
+                                    <h5 class="card-title">BiciCarga</h5>
+                                    <p class="card-text">Te ayudamos a trasladar objetos pesados e incomodos.</p>
                                 </div>
                             </div>
                         </div>
-<<<<<<< HEAD
-                        <div class="text-center mt-4">
-                            <a href="" class="btn btn-primary">Pide Tu Primer Servicio!!</a> 
-                        </div>
-=======
                         <button type="button" class="btn btn-primary" id="crearPedidoBtn" data-toggle="modal" data-target="#crearPedidoModal">
                             🚲 Crea tu Pedido!!
                         </button>
 
->>>>>>> 94fda7fbd90264c9d5419c6ddbb205daff14752c
                     </div>
                    
 
