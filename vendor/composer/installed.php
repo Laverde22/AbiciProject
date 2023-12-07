@@ -1,9 +1,9 @@
 <?php return array(
     'root' => array(
         'name' => 'laravel/laravel',
-        'pretty_version' => '1.0.0+no-version-set',
-        'version' => '1.0.0.0',
-        'reference' => NULL,
+        'pretty_version' => 'dev-master',
+        'version' => 'dev-master',
+        'reference' => '8872ad5dafa89d37fd090b1194722cf58afbc3b5',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
@@ -443,9 +443,9 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => '1.0.0+no-version-set',
-            'version' => '1.0.0.0',
-            'reference' => NULL,
+            'pretty_version' => 'dev-master',
+            'version' => 'dev-master',
+            'reference' => '8872ad5dafa89d37fd090b1194722cf58afbc3b5',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
@@ -915,9 +915,9 @@
             'dev_requirement' => false,
         ),
         'ramsey/uuid' => array(
-            'pretty_version' => '4.7.4',
-            'version' => '4.7.4.0',
-            'reference' => '60a4c63ab724854332900504274f6150ff26d286',
+            'pretty_version' => '4.7.5',
+            'version' => '4.7.5.0',
+            'reference' => '5f0df49ae5ad6efb7afa69e6bfab4e5b1e080d8e',
             'type' => 'library',
             'install_path' => __DIR__ . '/../ramsey/uuid',
             'aliases' => array(),
@@ -926,7 +926,7 @@
         'rhumsaa/uuid' => array(
             'dev_requirement' => false,
             'replaced' => array(
-                0 => '4.7.4',
+                0 => '4.7.5',
             ),
         ),
         'sabberworm/php-css-parser' => array(
