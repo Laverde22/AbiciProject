@@ -24,18 +24,11 @@
     </a>
   </li>
 
-  <li class="nav-item dropdown{{ $activePage == 'pedidos' ? ' show active' : '' }}">
-    <a class="nav-link dropdown-toggle" href="#" id="dropdownPedidos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="{{ $activePage == 'pedidos' ? 'true' : 'false' }}">
+  <li class="nav-item{{ $activePage == 'pedidos' ? ' active' : '' }}">
+    <a class="nav-link" href="{{ route('pedidos.list') }}">
       <i class="material-icons">shopping_cart</i>
-      <p>{{ __('Pedidos') }}</p>
+        <p>{{ __('Pedidos') }} </p>
     </a>
-    <div class="dropdown-menu{{ $activePage == 'pedidos' ? ' show' : '' }}" aria-labelledby="dropdownPedidos">
-      <a class="dropdown-item" href="{{ route('pedidos.list', ['estado' => 'todos']) }}">Todos</a>
-      <a class="dropdown-item" href="{{ route('pedidos.pendientes', ['estado' => 'pendientes']) }}">Pendientes</a>
-      <a class="dropdown-item" href="{{ route('pedidos.en-proceso', ['estado' => 'enproceso']) }}">En Proceso</a>
-      <a class="dropdown-item" href="{{ route('pedidos.finalizados', ['estado' => 'finalizados']) }}">Finalizados</a>
-      <a class="dropdown-item" href="{{ route('pedidos.denegados', ['estado' => 'denegados']) }}">Denegados</a>
-    </div>
   </li>
     <li class="nav-item{{ $activePage == 'clientes' ? ' active' : '' }}">
       <a class="nav-link" href="{{route('admin.listclientes')}}">

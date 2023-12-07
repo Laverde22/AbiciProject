@@ -5,6 +5,27 @@
     <div class="content">
         <div class="container-fluid">
             <h2>Listado de Pedidos Denegados</h2>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('pedidos.list', ['estado' => 'todos']) }}" >Todos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('pedidos.pendientes', ['estado' => 'pendientes']) }}">Pendientes</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('pedidos.en-proceso', ['estado' => 'enproceso']) }}">En Proceso</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('pedidos.finalizados', ['estado' => 'finalizados']) }}">Finalizados</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('pedidos.denegados', ['estado' => 'denegados']) }}">Denegados</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
             <div class="row">
                 @if($pedidos->isEmpty())
                     <p>No hay pedidos disponibles.</p>

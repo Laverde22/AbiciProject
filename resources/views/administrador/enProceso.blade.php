@@ -5,11 +5,31 @@
     <div class="content">
         <div class="container-fluid">
             <h2>Listado de Pedidos En Proceso</h2>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container-fluid">
+                  <ul class="navbar-nav">
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('pedidos.list', ['estado' => 'todos']) }}" >Todos</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('pedidos.pendientes', ['estado' => 'pendientes']) }}">Pendientes</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('pedidos.en-proceso', ['estado' => 'enproceso']) }}">En Proceso</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('pedidos.finalizados', ['estado' => 'finalizados']) }}">Finalizados</a>
+                    </li>
+                    <li class="nav-item">
+                      <a class="nav-link" href="{{ route('pedidos.denegados', ['estado' => 'denegados']) }}">Denegados</a>
+                    </li>
+                  </ul>
+                </div>
+              </nav>
             <div class="row">
                 @if($pedidos->isEmpty())
                     <p>No hay pedidos disponibles.</p>
                 @else
-                    @foreach($pedidos as $pedido)
                         <div class="col-md-4 mb-4">
                             <div class="">
                                 <div class="">
@@ -21,9 +41,6 @@
                                             <td><h3>Descripción</h3></td>
                                             <td><h3>direccion</h3></td>
                                             <td><h3>Estado</h3></td>
-                                            <td></td>
-                                            <td></td>
-                                            <td></td>
                                         </tr>
 
                                         @foreach($pedidos as $pedido)
@@ -46,7 +63,7 @@
                                 </div>
                             </div>
                         </div>
-
+                    @foreach($pedidos as $pedido)
                         <!-- Modal para cada pedido -->
                         <div class="modal fade" id="modalPedido{{ $pedido->IdPedido }}" tabindex="-1" role="dialog" aria-labelledby="modalPedido{{ $pedido->IdPedido }}Label" aria-hidden="true">
                             <div class="modal-dialog" role="document">
