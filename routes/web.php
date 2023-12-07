@@ -48,6 +48,7 @@ Route::get('pedidos/{id}/editar',[App\Http\Controllers\AdminController::class,'e
 Route::put('pedidos/{id}/actualizar',[App\Http\Controllers\AdminController::class,'update'])->name('pedidos.update');
 Route::get('administrador/listclientes',[App\Http\Controllers\AdminController::class,'indexclientes'])->name('admin.listclientes');
 Route::get('administrador/listpersonal',[App\Http\Controllers\AdminController::class,'indexpersonal'])->name('admin.listpersonal');
+Route::get('administrador/listadmins',[App\Http\Controllers\AdminController::class,'indexadmins'])->name('admin.listadmins');
 Route::put('/administrador/{id}/cancelar', [App\Http\Controllers\AdminController::class, 'cancelar'])->name('pedidos.cancelar');
 
 Route::get('/pedidos', [AdminController::class, 'listPedidos'])->name('pedidos.list');
@@ -82,5 +83,6 @@ Route::resource('domiciliario', App\Http\Controllers\DomiController::class);
 
 
 Route::post('administrador/registrarDomi',[App\Http\Controllers\RegisterController::class,'store'])->name('registrarDomi');
+Route::post('administrador/registrarAdmin',[App\Http\Controllers\RegisterController::class,'registrarAdmin'])->name('registrarAdmin');
 
 });

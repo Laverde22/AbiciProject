@@ -269,6 +269,30 @@ class AdminController extends Controller
             
         return view('administrador/listpersonal' , ['rol' => $rol]);
     }
+
+    public function indexadmins()
+    {
+        $usuarios = Auth::user();
+        $rol = DB::table('model_has_roles')
+        ->join('users', 'model_has_roles.model_id', '=', 'users.id')
+        ->select(
+            'users.name',
+            'users.apellidos',
+            'users.email',
+            'users.fechaNacimiento',
+            'users.numDocumento',
+            'users.tipoDocumento',
+            'users.direccion',
+            'users.id',
+            'users.telefono',
+            'model_has_roles.role_id'
+        )
+        ->orderBy('users.id') // Ordenar por el estado de forma ascendente
+        ->where('model_has_roles.role_id', '=', '7') // Filtrar por estado pendiente
+        ->get(); 
+            
+        return view('administrador/listadmins' , ['rol' => $rol]);
+    }
     
 }
 

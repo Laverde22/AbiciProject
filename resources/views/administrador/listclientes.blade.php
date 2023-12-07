@@ -23,6 +23,7 @@
                     <input type="text" name="valor" id="valor" class="form-control" placeholder="Ingrese el valor de búsqueda ">
                 </div>
                 <button type="submit" class="btn btn-primary">Buscar</button>
+                
             </form>
             
             

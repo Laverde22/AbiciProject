@@ -3,10 +3,10 @@
 @section('content')
     <div class="content">
         <div class="container-fluid">
-            <h2>Listado de domiciliarios</h2>
-            <a href="#" class="btn btn-primary btn-ver-mas" data-toggle="modal" data-target="#registrarDomi">Registrar domiciliario</a>
+            <h2>Listado de administradores</h2>
+            <a href="#" class="btn btn-primary btn-ver-mas" data-toggle="modal" data-target="#registrarDomi">Registrar administrador</a>
             @if($rol->isEmpty())
-                <p>No hay domiciliarios que cumplan estas caracteristicas</p>
+                <p>No hay administradores que cumplan estas caracteristicas</p>
             @else
             <form action="{{ route('admin.searchcli') }}" method="GET" class="mb-4">
                 <div class="form-group">
@@ -24,7 +24,7 @@
                     <input type="text" name="valor" id="valor" class="form-control" placeholder="Ingrese el valor de búsqueda ">
                 </div>
                 <button type="submit" class="btn btn-primary">Buscar</button>
-            </form>
+                
             
             
                 <div class="row">
@@ -76,7 +76,7 @@
                                         {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarRolModal{{ $cliente->id }}">Editar Estado</button> --}}
                                         <p ><strong>Fecha De Nacimineto:</strong> {{ $cliente->fechaNacimiento }}</p>
                                         <p><strong>{{ $cliente->tipoDocumento }}:</strong> {{ $cliente->numDocumento }}</p>
-                                        <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarRolModal{{ $cliente->id }}">Editar Rol</button>
+                                        {{-- <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#editarRolModal{{ $cliente->id }}">Editar Rol</button> --}}
                                         <button type="button" class="btn btn-primary" data-dismiss="modal">Cerrar</button>
                                     </div>
                                    
@@ -125,7 +125,7 @@
             <div class="modal-header">
                 <h5 class="modal-title" id="registrarDomi">Registrar Domiciliario</h5>
             </div>
-            <form action="{{ route('registrarDomi') }}" method="POST">
+            <form action="{{ route('registrarAdmin') }}" method="POST">
             @csrf
             <div class="modal-body">
                 <!-- Selección del nuevo rol -->
@@ -148,7 +148,7 @@
             </div>
                 <div class="modal-footer">
                     <button type="submit" class="btn btn-primary">Registrar</button>
-                    <button type="button" class="btn btn-primary" onclick="location.reload();">Cancelar</button>                                                    
+                    <button type="button" class="btn btn-primary" onclick="location.reload();">Cancelar</button>
                 </div>
             </form>
         </div>
