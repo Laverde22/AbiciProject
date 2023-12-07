@@ -36,16 +36,10 @@
                                 </div>
                             </div>
                         </div>
-<<<<<<< HEAD
-                        <div class="text-center mt-4">
-                            <a href="" class="btn btn-primary">Pide Tu Primer Servicio!!</a> 
-                        </div>
-=======
                         <button type="button" class="btn btn-primary" id="crearPedidoBtn" data-toggle="modal" data-target="#crearPedidoModal">
                             🚲 Crea tu Pedido!!
                         </button>
 
->>>>>>> 94fda7fbd90264c9d5419c6ddbb205daff14752c
                     </div>
                    
 
