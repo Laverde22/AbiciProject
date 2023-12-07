@@ -24,8 +24,15 @@
     </a>
   </li>
 
-  <li class="nav-item{{ $activePage == 'pedidos' ? ' active' : '' }}">
-    <a class="nav-link" href="{{ route('pedidos.list') }}">
+  <li class="nav-item{{ $activePage == 'admin' ? ' active' : '' }}">
+    <a class="nav-link" href="{{ route('admin.listadmins') }}">
+      <i class="material-icons">store</i>
+        <p>{{ __('Administradores') }} </p>
+    </a>
+  </li>
+
+  <li class="nav-item dropdown{{ $activePage == 'pedidos' ? ' show active' : '' }}">
+    <a class="nav-link dropdown-toggle" href="#" id="dropdownPedidos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="{{ $activePage == 'pedidos' ? 'true' : 'false' }}">
       <i class="material-icons">shopping_cart</i>
         <p>{{ __('Pedidos') }} </p>
     </a>
