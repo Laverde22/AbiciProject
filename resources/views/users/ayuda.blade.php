@@ -88,7 +88,6 @@
         
             <!-- Sección: Trabaja con nosotros/Afília tu tienda -->
             <div class="card">
-                <img src="ruta/de/imagen1.jpg" class="card-img-top" alt="Imagen 1">
                 <div class="card-body">
                     <h5 class="card-title">Trabaja con nosotros / Afilia tu tienda</h5>
                     <p class="card-text">¡Estamos en busca de tiendas interesadas en formar parte de nuestra red de domicilios! Únete a nosotros y expande tu alcance.</p>
@@ -98,7 +97,6 @@
         
             <!-- Sección: Buscamos domiciliarios -->
             <div class="card mt-4">
-                <img src="ruta/de/imagen2.jpg" class="card-img-top" alt="Imagen 2">
                 <div class="card-body">
                     <h5 class="card-title">Buscamos domiciliarios</h5>
                     <p class="card-text">¿Eres un conductor responsable y buscas oportunidades laborales? ¡Te estamos buscando para unirte a nuestro equipo de domiciliarios!</p>

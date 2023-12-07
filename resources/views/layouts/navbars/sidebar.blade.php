@@ -53,13 +53,6 @@
           <a class="dropdown-item" href="{{ route('bicicletas.sin-domiciliario') }}">Sin Domiciliario</a>
       </div>
   </li>
-  
- {{--    <li class="nav-item{{ $activePage == 'domiciliarios' ? ' active' : '' }}">
-      <a class="nav-link" href="{{route('domiciliarios.index')}}">
-        <i class="material-icons">store</i>
-        <p>{{ __('Domiciliarios') }}</p>
-      </a>
-    </li> --}}
     <li class="nav-item{{ $activePage == 'factura' ? ' active' : '' }}">
       <a class="nav-link" href="">
         <i class="material-icons">library_books</i>
@@ -73,13 +66,6 @@
   <a class="nav-link " href="{{route('users.index')}}">
     <i class="material-icons">shopping_cart</i>
     <p>{{ __('Mis Pedidos') }}</p>
-  </a>
-</li>
-
-<li class="nav-item{{ $activePage == 'notificaciones' ? ' active' : '' }}">
-  <a class="nav-link" href="#">
-     <i class="material-icons">notifications</i>
-     <p>{{ __('Notificaciones') }}</p>
   </a>
 </li>
 <li class="nav-item{{ $activePage == 'ayuda' ? ' active' : '' }}">
