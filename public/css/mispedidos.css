@@ -1,0 +1,37 @@
+/* Estilos para la tabla */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 8px;
+}
+
+table th {
+    background-color: #f2f2f2;
+}
+
+/* Estilos para la sección */
+section {
+    margin: 20px;
+}
+
+/* Estilos para las filas impares de la tabla */
+tbody tr:nth-child(odd) {
+    background-color: #f9f9f9;
+}
+
+/* Estilos para los encabezados de la tabla */
+th {
+    text-align: left;
+}
+
+/* Estilos para las celdas de la tabla */
+td {
+    text-align: left;
+}
+
+/* Estilos adicionales o específicos según sea necesario */

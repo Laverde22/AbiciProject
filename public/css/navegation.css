@@ -1,0 +1,41 @@
+/*   Paleta de colores   */
+:root {
+    --colorprimario: #239B56;
+    --colorsecundario: #0099CC;
+    --colorterciario: #66FF99;
+    --colortraslucido: rgba(255, 255, 255, 0.434);
+
+  }
+
+.nav-bar.sticky {
+    position: fixed;
+    width: 100%;
+    background-color:var(--colortraslucido); /* Fondo semi-transparente para legibilidad */
+    box-shadow: 0px 4px 6px rgba(0, 255, 55, 0.359);
+    z-index: 1000;
+}
+
+.nav-bar {
+    display: flex;
+    justify-content:end ;
+    align-items: center;
+    max-width: 100%;
+    margin: 0 auto;
+    transition: top 0.3s;
+}
+
+.nav-left {
+    margin-top: 14px;
+    display: flex;
+    align-items: center;
+}
+
+.botones_nav{
+    color: var(--colorprimario);
+    font-size:larger;
+}
+
+.btonprofile{
+    background-color: var(--colorprimario);
+    color: white;
+}

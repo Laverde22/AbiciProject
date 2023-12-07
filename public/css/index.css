@@ -1,0 +1,106 @@
+:root {
+    --color-primario: #239B56;
+    --color-secundario: #0099CC;
+    --color-terciario: #66FF99;
+    --color-traslucido: rgba(255, 255, 255, 0.434);
+}
+/* Hero Section */
+
+
+.hero h1 {
+    font-size: 36px;
+    margin-bottom: 20px;
+    justify-content: center;
+}
+
+.hero p {
+    font-size: 18px;
+    margin-bottom: 40px;
+}
+
+a.bton {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: var(--color-primario);
+    color: #fff;
+    text-decoration: none;
+    border-radius: 4px;
+    font-weight: bold;
+}
+
+a.bton:hover {
+    background-color: var(--color-traslucido);
+    color: var(--color-primario); 
+}
+
+/* Services Section */
+.services {
+    text-align: center;
+    padding: 50px 0;
+}
+
+.services h2 {
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.service {
+    display: inline-block;
+    width: 30%;
+    margin: 0 1.5%;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.service img {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 10px;
+    margin: 0 auto;
+}
+
+.service h3 {
+    font-size: 18px;
+    margin-bottom: 10px;
+}
+
+.service p {
+    font-size: 14px;
+}
+
+/* Carousel Section */
+.carousel-inner img {
+    max-width: 100%;
+    border-radius: 10px;
+    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
+    margin-right: 10px;
+}
+
+.carousel-control-prev,
+.carousel-control-next {
+    background-color: var(--color-primario);
+    text-decoration: none;
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    font-size: 24px;
+    opacity: 0.7;
+    transition: opacity 0.2s ease;
+    margin-top: 100px;
+}
+
+.carousel-control-prev:hover,
+.carousel-control-next:hover {
+    opacity: 1;
+}
+
+/* Responsive */
+@media screen and (max-width: 768px) {
+    .service {
+        width: 90%;
+        margin: 0 5%;
+        margin-bottom: 20px;
+    }
+}
