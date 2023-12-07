@@ -4,45 +4,61 @@
     <div class="content">
         <div class="container-fluid">
             <div class="container-fluid">
-                <h2>Listado de Bicicletas</h2>
+                <h2>Listado De Todas Las Bicicletas</h2>
+                <button type="button" class="btn btn-primary" id="crearPedidoBtn" data-toggle="modal" data-target="#crearPedidoModal">
+                    Crea Bicicleta
+                  </button>
                 @if($usuarios->isEmpty())
-                <p>No hay clientes que cumplan estas caracteristicas</p>
+                <p>No hay Bicicletas que cumplan estas caracteristicas</p>
             @else
-            {{-- <form action="{{ route('admin.searchcli') }}" method="GET" class="mb-4">
-                <div class="form-group">
-                    <label for="selectCriterio">Seleccionar método de búsqueda:</label>
-                    <select name="criterio" id="selectCriterio" class="form-control" autofocus>
-                        <option value="numDocumento">Número de Documento</option>
-                        <option value="tipoDocumento">Tipo de Documento</option>
-                        <option value="direccion">Dirección</option>
-                        <option value="telefono">Telefono</option>
-                        <option value="estado">Estado</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="valor">Valor:</label>
-                    <input type="text" name="valor" id="valor" class="form-control" placeholder="Ingrese el valor de búsqueda ">
-                </div>
-                <button type="submit" class="btn btn-primary">Buscar</button>
-            </form> --}}
-            
-            
-                <div class="row">
-                    @foreach($usuarios as $cliente)
-                        <div class="col-md-4 mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title"> Bicicleta Tipo {{ $cliente->tipo }}</h4>
-                                    <p class="card-text">Domiciliario Responsable: {{ $cliente->fullname }}</p>
-                                    <p class="card-text">Telefono: {{ $cliente->telefono }}</p>
-                                    <p class="card-text">Direccion: {{ $cliente->direccion }}</p>
-                                    <p class="card-text">Correo: {{ $cliente->email }}</p>
-                                    <a href="#" class="btn btn-primary btn-ver-mas" data-toggle="modal" data-target="#modalCliente">Ver Más</a>
-                                </div>
-                            </div>
-                        </div>
 
-                        <!-- Modal para cada cliente -->
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('bicicletas.index') }}">
+                            {{ __('Bicicletas') }}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('bicicletas.sin-domiciliario') }}">
+                        {{ __('Sin Domiciliario') }}
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+            
+            
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Tipo de Bicicleta</th>
+                        <th>Domiciliario Responsable</th>
+                        <th>Teléfono</th>
+                        <th>Dirección</th>
+                        <th>Correo</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach($usuarios as $cliente)
+                    <tr>
+                        <td>{{ $cliente->tipo }}</td>
+                        <td>{{ $cliente->fullname }}</td>
+                        <td>{{ $cliente->telefono }}</td>
+                        <td>{{ $cliente->direccion }}</td>
+                        <td>{{ $cliente->email }}</td>
+                        <td>
+                            <a href="#" class="btn btn-primary btn-ver-mas" data-toggle="modal" data-target="#modalCliente">Ver Más</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            
+
+                    @foreach($usuarios as $cliente)   <!-- Modal para cada cliente -->
                         <div class="modal fade" id="modalCliente" tabindex="-1" role="dialog" aria-labelledby="modalClienteLabel" aria-hidden="true" data-backdrop="static" >
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
@@ -100,5 +116,5 @@
             @endif
             </div>
         </div>
-    </div>
+ 
 @endsection

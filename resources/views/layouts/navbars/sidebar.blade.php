@@ -17,6 +17,14 @@
       </li>
  
   @if(auth()->user()->hasRole('admin'))
+
+  <li class="nav-item{{ $activePage == 'admin' ? ' active' : '' }}">
+    <a class="nav-link" href="{{ route('admin.listadmins') }}">
+      <i class="material-icons">key</i>
+        <p>{{ __('Administradores') }} </p>
+    </a>
+  </li>
+
   <li class="nav-item{{ $activePage == 'personal' ? ' active' : '' }}">
     <a class="nav-link" href="{{ route('admin.listpersonal') }}">
       <i class="material-icons">store</i>
@@ -24,17 +32,10 @@
     </a>
   </li>
 
-  <li class="nav-item{{ $activePage == 'admin' ? ' active' : '' }}">
-    <a class="nav-link" href="{{ route('admin.listadmins') }}">
-      <i class="material-icons">store</i>
-        <p>{{ __('Administradores') }} </p>
-    </a>
-  </li>
-
-  <li class="nav-item dropdown{{ $activePage == 'pedidos' ? ' show active' : '' }}">
-    <a class="nav-link dropdown-toggle" href="#" id="dropdownPedidos" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="{{ $activePage == 'pedidos' ? 'true' : 'false' }}">
+  <li class="nav-item{{ $activePage == 'pedidos' ? ' active' : '' }}">
+    <a class="nav-link" href="{{route('admin.listpedidos')}}">
       <i class="material-icons">shopping_cart</i>
-        <p>{{ __('Pedidos') }} </p>
+        <p>{{ __('Pedidos') }}</p>
     </a>
   </li>
     <li class="nav-item{{ $activePage == 'clientes' ? ' active' : '' }}">
@@ -43,16 +44,15 @@
           <p>{{ __('Usuarios') }}</p>
       </a>
     </li>
-    <li class="nav-item dropdown{{ $activePage == 'bici' ? ' show active' : '' }}">
-      <a class="nav-link dropdown-toggle" href="#" id="dropdownBicicletas" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="{{ $activePage == 'bicicletas' ? 'true' : 'false' }}">
-          <i class="material-icons">directions_bike</i>
-          <p>{{ __('Bicicletas') }}</p>
-      </a>
-      <div class="dropdown-menu{{ $activePage == 'bici' ? ' show' : '' }}" aria-labelledby="dropdownBicicletas">
-          <a class="dropdown-item" href="{{ route('bicicletas.index') }}">Con Domiciliarios</a>
-          <a class="dropdown-item" href="{{ route('bicicletas.sin-domiciliario') }}">Sin Domiciliario</a>
-      </div>
+
   </li>
+  <li class="nav-item{{ $activePage == 'bici' ? ' active' : '' }}">
+    <a class="nav-link" href="{{route('bicicletas.index')}}">
+      <i class="material-icons">directions_bike</i>
+        <p>{{ __('Bicicletas') }}</p>
+    </a>
+  </li>
+
     <li class="nav-item{{ $activePage == 'factura' ? ' active' : '' }}">
       <a class="nav-link" href="">
         <i class="material-icons">library_books</i>

@@ -4,43 +4,55 @@
     <div class="content">
         <div class="container-fluid">
             <div class="container-fluid">
-                <h2>Listado de Bicicletas</h2>
+                <h2>Bicicletas Sin Asignar</h2>
+                <button type="button" class="btn btn-primary" id="crearPedidoBtn" data-toggle="modal" data-target="#crearPedidoModal">
+                    Crea Bicicleta
+                  </button>
                 @if($usuarios->isEmpty())
                 <p>No hay Bicicletas que cumplan estas caracteristicas</p>
             @else
-           {{--  <form action="{{ route('admin.searchcli') }}" method="GET" class="mb-4">
-                <div class="form-group">
-                    <label for="selectCriterio">Seleccionar método de búsqueda:</label>
-                    <select name="criterio" id="selectCriterio" class="form-control" autofocus>
-                        <option value="numDocumento">Número de Documento</option>
-                        <option value="tipoDocumento">Tipo de Documento</option>
-                        <option value="direccion">Dirección</option>
-                        <option value="telefono">Telefono</option>
-                        <option value="estado">Estado</option>
-                    </select>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <div class="container">
+                    <ul class="navbar-nav">
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('bicicletas.index') }}">
+                            {{ __('Bicicletas') }}
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ route('bicicletas.sin-domiciliario') }}">
+                        {{ __('Sin Domiciliario') }}
+                            </a>
+                        </li>
+                    </ul>
                 </div>
-                <div class="form-group">
-                    <label for="valor">Valor:</label>
-                    <input type="text" name="valor" id="valor" class="form-control" placeholder="Ingrese el valor de búsqueda ">
-                </div>
-                <button type="submit" class="btn btn-primary">Buscar</button>
-            </form> --}}
+            </nav>
             
             
-                <div class="row">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th>Bicicleta Tipo</th>
+                        <th>Domiciliario Responsable</th>
+                        <th>Acción</th>
+                    </tr>
+                </thead>
+                <tbody>
                     @foreach($usuarios as $cliente)
-                        <div class="col-md-4 mb-4">
-                            <div class="card">
-                                <div class="card-body">
-                                    <h4 class="card-title"> Bicicleta Tipo {{ $cliente->tipo }}</h4>
-                                    <p class="card-text">Domiciliario Responsable: No Asignado</p>
-                                    <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalCliente">Asignar Domiciliario</a>
-                                </div>
-                            </div>
-                        </div>
-
+                    <tr>
+                        <td>{{ $cliente->tipo }}</td>
+                        <td>No Asignado</td>
+                        <td>
+                            <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#modalCliente">Asignar Domiciliario</a>
+                        </td>
+                    </tr>
+                    @endforeach
+                </tbody>
+            </table>
+            
+                    @foreach($usuarios as $cliente) 
                         <!-- Modal para cada cliente -->
-                        <div class="modal fade" id="modalCliente" tabindex="-1" role="dialog" aria-labelledby="modalClienteLabel" aria-hidden="true" data-backdrop="static" >
+                        <div class="modal fade" id="modalCliente" tabindex="-1" role="dialog" aria-labelledby="modalClienteLabel" aria-hidden="true"  >
                             <div class="modal-dialog" role="document">
                                 <div class="modal-content">
                                     <div class="modal-header">
@@ -60,6 +72,7 @@
                                         <div class="modal-footer">
                                             <button type="submit" class="btn btn-primary">Asignar Bicicleta</button>    
                                         </div>
+                                        
                                     </form>
                                     
                                     
